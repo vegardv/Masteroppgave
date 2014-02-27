@@ -6,7 +6,7 @@ CPU = AMD64
 
 MACHINE     = test
 TARGET      = sfun
-CHART_SRCS 	= c1_test.c c2_test.c c3_test.c c4_test.c c5_test.c
+CHART_SRCS 	= c1_test.c c2_test.c c3_test.c c4_test.c c5_test.c c6_test.c
 MACHINE_SRC	= test_sfun.c
 MACHINE_REG = test_sfun_registry.c
 MAKEFILE    = test_sfun.mak

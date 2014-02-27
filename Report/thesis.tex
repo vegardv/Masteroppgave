@@ -1,0 +1,51 @@
+% This is the root file of your thesis: thesis.tex
+% A line starting with % is a comment. In some cases, I have included a command preceded by a %. You may activate the command by removing the %.
+
+%%===================================
+\documentclass[12pt, twoside, openright]{report}
+\usepackage{ramsstyle}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{tocbibind}
+\usepackage[bottom]{footmisc}
+%%===================================
+%Write the various parts of your thesis as separate files and include them into the main file by the command \include{name of included file}. When you compile the LaTeX file, you may choose which subfiles to include by the command
+%%===================================
+\begin{document}
+%\setcounter{page}{0}
+\include{front} % This is the titlepage
+\pagenumbering{roman}
+\setcounter{page}{0}
+\include{problemDescription}
+\include{abstract}
+\include{summary}
+\include{preface}
+\include{acronyms}
+%\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+\include{figures}
+\pagenumbering{arabic}
+\setcounter{page}{0}
+\include{introduction}
+\include{chapter02}
+\include{chapter0n}
+\include{chapter04}
+\include{chapter05}
+\include{chapter06}
+\include{chapter07}
+\include{chapter08}
+% Include more chapters as required.
+%%=========================================
+%\appendix
+	% Include more appendices as required.
+%%=========================================
+\bibliographystyle{apa}
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{bibtex/scopus}  
+\end{document}

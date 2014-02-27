@@ -3,5 +3,6 @@ c2_test.obj
 c3_test.obj
 c4_test.obj
 c5_test.obj
+c6_test.obj
 test_sfun_registry.obj
 test_sfun.obj

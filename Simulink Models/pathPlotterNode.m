@@ -35,8 +35,8 @@ function pathPlotterNode(x, y,  cornersX, cornersY, tsamp, dec, inframe, nodePos
 %You are free to modify the code as necessary.
 %
 %Bugs should be reported to the TA.
-close all
-figure(1)
+%close all
+%figure(1)
 hold on;
 
 plot(y, x)

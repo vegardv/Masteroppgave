@@ -11,7 +11,7 @@ g = 9.81;
 b = 1.140e-7;
 k = 2.980e-6;
 l = 0.225;
-time = 100;
+time = 10;
 
 % CONTROLLER
 % Controller attitude
@@ -30,12 +30,12 @@ K_d_pos = 2*sqrt(K_p_pos(1,1))*eye(2);
 
 
 % INITIAL VALUES
-eta_0 = [0,0,0,0,0,0]';
+eta_0 = [0,0,-10,0,0,0]';
 nu_0 = [0,0,0,0,0,0]';
 
 % REFERENCE VALUES
 psi_ref = 0;
-pos_ref = [1,2,0]';
+pos_ref = [10,20,-10]';
 
 % SIMULATE
 sim('test');
@@ -120,6 +120,6 @@ subplot(3,2,6)
 plot(UAVAttitude.Time, omega.Data(1:end, 6));
 
 figure(6)
-%pathPlotterNode(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),  cornersX.Data(:,:), cornersY.Data(:,:), UAVPos.Time(2), 10, inframe.Data(:), [10,10]');
-pathPlotter(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80, 0, time, 0,0);
+pathPlotterNode(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),  cornersX.Data(:,:), cornersY.Data(:,:), UAVPos.Time(2), 10, inframe.Data(:), [10,10]');
+%pathPlotter(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80, 0, time, 0,0);
 %pathPlotter3d(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),UAVPos.Data(1:end,3), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80);

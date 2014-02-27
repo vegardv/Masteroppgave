@@ -1,0 +1,81 @@
+\chapter{Description of the UAV}
+The UAV used in this project as a base for the pickup and deployment mechanism is an ArduCopter Hexacopter (see Figure \ref{hexaCopter}). The ArduCopter uses the ArduPilot Mega 2.6 flight control unit (hereinafter referred to as APM). The UAV will also be equipped with a PandaBoard as an onboard computer.\\
+\newline
+Relevant features of the APM and the PandaBoard are described below.
+\begin{figure}[H]
+\centering
+\includegraphics[width = 8cm]{fig/hexaCopter.jpg}
+\caption{ArduCopter Hexacopter \textit{Courtesy arducopter.co.uk}}
+\label{hexaCopter}
+\end{figure}
+\section{APM}
+The APM is an open source flight control unit supporting multicopters, traditional helicopters, fixed wing aircraft and rovers \citep{devArdupilot}. Software is developed and supported by the DIYDrones community. At the moment the community has more than 45 000 members (November 2013) and an active forum where one could get help and useful tips and tricks.\\
+\subsection{Modes of Operation}
+The APM can operate in many different modes of operation \citep{flight}. The most relevant for this project are:
+\begin{itemize}
+\item Stabilize - Manual flight mode that automaticly levels the  UAV and maintains the current heading
+\item Auto - The UAV tracks predefined waypoints
+\item Guided - The next waypoint is defined in flight
+\item RTL (Return to Launch) - The UAV returns to the position where it was armed and hovers
+\item LAND - The UAV lands, shut-down the motors and disarms
+\end{itemize}
+Control signals in the different modes are given either with PWM-signals\footnote{Pulse Width Modulated signals} or through serial communication using the MAVLink protocol (the MAVLink protocol will be briefly explained below). The PWM-signals are usually sent from a 2.4 GHz radio via a receiver on the UAV, while the serial communication is usually sent from a ground station via a telemetry link to the APM. These signals could easily be replicated by the PandaBoard. A picture of the APM with a voltage regulator ann an external magnetometer and GPS module is found in Figure \ref{apm}.
+\begin{figure}[H]
+\centering
+\includegraphics[width = 6cm]{fig/apm25.jpg}
+\caption{APM 2.6 with a voltage regulator and an external magnetometer and GPS module \textit{Courtesy diydrones.com}}
+\label{apm}
+\end{figure}
+\subsection{Sensors}
+The APM is equipped with several sensors that are utilized for navigation and control. These will be briefly explained below.
+\subsubsection{Barometer}
+A barometer is an instrument that is used to measure air pressure \citep{barometer}. The barometric formula 
+\begin{eqnarray}
+p(h) = p(0)e^{-\dfrac{mgh}{kT}}
+\label{barometer}
+\end{eqnarray}
+relates the pressure $p(h)$ of an isothermal, ideal gas of molecular mass $m$ at some height $h$ to its pressure $p(0)$ at height $h = 0$, where $g$ is the acceleration of gravity, $k$ the Boltzmann constant, and $T$ the temperature. This formula applies reasonably well to the lower troposphere. For altitudes up to 6 km the error is less than 5 \% \citep{Berberan-Santos1997}.\\
+\newline
+The barometer in the APM is based on piezoresistive technology. Piezoresisivity is a common sensing principle for micro machined sensor \citep{mems} that uses the fact that resistivity of some materials changes with applied stress \citep{Mason1957}. This feature is used in the barometer, when the air pressure varies, the pressure on the material in the barometer varies which means that resistivity varies. A mapping from resistivity to pressure is used to calculate altitude referenced to start altitude. Altitude calculations by the use of barometers can be sensitive to changing weather conditions.\\\newline
+The barometer in the APM is the MS5611-01BA03 by Measurement Specialties, which according to the producer has a resolution of 10 cm.
+\subsubsection{Magnetometer}
+ A magnetometer is an instrument for measurement of magnetic fields. Depending on the setup they can measure strength of a magnetic field or both strength and direction of the field \citep{mag}. The magnetometer in the APM is a three-axes magnetometer. This means that both the strength and direction of the magnetic field can be measured. The magnetometer measures the force created by the magnetic field on an energized conductor. This force is called the Lorentz Force and follows the formula
+ \begin{eqnarray}
+ \boldsymbol{F} = q\boldsymbol{v} \times \boldsymbol{B}
+ \label{bar}
+ \end{eqnarray}
+ where $q$ is charge, $\boldsymbol{F}$ is the Lorentz Force and $\boldsymbol{B}$ is the magnetic field. The charge $q$ is assumed to be known and $\boldsymbol{F}$ can be measured using piezoresistive principles. Then the magnetic field is easily found using the formula in equation (\ref{bar}). This field is pointing towards north (excluding disturbances from for instance the motors on the UAV), which will be utilized in the APMs IMU (described in the next section) to get more accurate attitude measurements.\\
+\newline
+The magnetometer in the APM is a HMC5883L from Honeywell.
+\subsubsection{Inertial Measurement Unit}
+The APM contains an Inertial Measurement Unit (IMU). An IMU consists of an ISA (Inertial Sensor Assembly), hardware and low level software. The ISA is a cluster of three gyroscopes and three accelerometers that measure angular velocity and acceleration respectively \citep{vik}. The IMU can also use magnetometer measurements. In the APM the magnetometer is not a part of the IMU, but it has an interface where it communicates with the magnetometer to make it possible to utilize the magnetometer measurements in the calculations of the attitude of the UAV.\\
+\newline
+Conceptually the accelerometer measures the movement of a damped mass hanging in a spring. To transform this movement into an electric signal, piezoresistive principles are utilized. In this case is it the acceleration that creates deformation in the piezoresistive material.\\
+\newline
+The gyroscopes are also based on MEMS technology. MEMS-gyroscopes are usually implemented with a tuning fork configuration. Two masses oscillate in opposite directions of each other. When these masses experiences angular velocity the Coriolis force act in opposite directions on the masses. This results in a measurable capacitance change which is proportional to the angular velocity of the UAV \citep{gyro}.\\
+\newline
+The IMU in the APM is a MPU-6000 from Inven Sense.
+\subsubsection{GPS}
+The GPS module that is connected to the APM contains an ublox LEA-6H module \citep{storeGPS}. It uses Navstar GPS but can also support GLONASS and Galileo. Communication to the APM is done via UART\footnote{Universal Asynchronous Receiver/Transmitter} with an update frequency of 5 Hz. Position accuracy is given by the datasheet to be 2.5 m CEP\footnote{CEP (Circular Error Probability) defines the radius of a circle centered in the true position containing 50 \% of the GPS measurements \citep{cep}}\citep{ublox}. GPS can also be used for altitude measurements, but the nature of the GPS is that altitude measurements will have even less accuracy than position measurements.
+\subsection{Interfaces}
+The APM has several interfaces that make it flexible and suitable for research and development. It has dedicated connection points for GPS and telemetry. These are interfaced using UART. It also has an unused UART-port available for other units and applications. Input from the radio and output for the motor controllers have dedicated ports that operates with PWM-signals. A connection point to access the APMs $I^2C$ bus is also available. Several units can communicate using this bus. It has also a lot of unused I/O-pins available for further development. These can for instance be used to connect an Ultrasonic Range Finder (there are several of them that are supported by the APM).
+\subsubsection{MAVLink}
+The APM communicates with its surroundings using UART with a subset of the communication protocol MAVLink\footnote{Micro Air Vehicle Communication Protocol}. MAVLink is a lightweight, header-only marshalling library for micro air vehicles \citep{mavlink}. MAVLink has a lot of predefined messages in addition to the possibility of creating custom messages. An XML-file contains the definition of the different message types. An example of one of the message definitions is shown in Figure \ref{mavlink}.
+\begin{figure}[H]
+\centering
+\includegraphics[width = 16cm]{fig/mavlink.JPG}
+\caption{Message definition of message with ID 24 \textit{Courtesy of wikipedia.org}}
+\label{mavlink}
+\end{figure}\noindent
+The MAVLink protocol can be used both to get status information from the APM and to give commands to the APM.
+\section{PandaBoard ES}
+The version of the PandaBoard used in this project is the PandaBoard ES Revision B2 (hereinafter referred to as PandaBoard). The PandaBoard is a small but powerful computer based on an OMAP$^{\rm TM}$ 4 Processor. The OMAP$^{\rm TM}$ 4 Processor is designed for high performance applications within a low power envelope \citep{omap} and contains a Dual-core ARM\textregistered  1.2 GHz CPU. The PandaBoard do also have 1 GB RAM and a port to insert a SD-card for additional memory \citep{panda}.
+\subsection{Interfaces}
+The PandaBoard has several interfaces that make it a good platform for development. It has two expansion connectors with 28 pins each. The functions of these pins includes general purpose I/O, SPI, $I^2C$, USB, UART, audio, power and support for additional memory \citep{pandaManual}. This means that the the PandaBoard is able of communicating with its surroundings using most of the most popular bus standards.\\
+\newline
+The PandaBoard does also include a camera header available for development of camera solutions. e-con Systems has developed a camera (e-CAM51\textunderscore 44x) especially for the PandaBoard and this header. The camera is a 5 MP auto focus camera able to provide 720p HD video streaming at 60 fps \citep{camera}. Communication with the camera uses the MIPI\footnote{Mobile Industry Processor Interface} CSI-2 standard. CSI-2 is a standard that provides a robust, scalable, low power and high speed interface for imaging solutions \citep{img}.  
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width = 8cm]{fig/cameraBoard.JPG}
+%\caption{e-CAM51\textunderscore 44x(SOURCE: manual)}
+%\end{figure}

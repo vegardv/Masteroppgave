@@ -1,0 +1,33 @@
+\contentsline {chapter}{Problem Description}{}{Doc-Start}
+\contentsline {chapter}{Abstract}{ii}{chapter*.1}
+\contentsline {chapter}{Sammendrag}{iv}{chapter*.2}
+\contentsline {chapter}{Preface}{vi}{chapter*.3}
+\contentsline {chapter}{Acronyms}{viii}{chapter*.4}
+\contentsline {chapter}{Contents}{xi}{chapter*.6}
+\contentsline {chapter}{List of Figures}{xiii}{chapter*.7}
+\contentsline {chapter}{List of Tables}{xv}{chapter*.8}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Background and motivation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Previous work}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Contribution and scope of this report}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}Organization of this report}{1}{section.1.4}
+\contentsline {chapter}{\numberline {2}Description of the UAV}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}APM}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Modes of Operation}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Sensors}{5}{subsection.2.1.2}
+\contentsline {subsubsection}{Barometer}{5}{section*.9}
+\contentsline {subsubsection}{Magnetometer}{5}{section*.10}
+\contentsline {subsubsection}{Inertial Measurement Unit}{6}{section*.11}
+\contentsline {subsubsection}{GPS}{6}{section*.12}
+\contentsline {subsection}{\numberline {2.1.3}Interfaces}{6}{subsection.2.1.3}
+\contentsline {subsubsection}{MAVLink}{7}{section*.13}
+\contentsline {section}{\numberline {2.2}PandaBoard ES}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Interfaces}{7}{subsection.2.2.1}
+\contentsline {chapter}{\numberline {3}"Some chapter"}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}Background Theory}{11}{chapter.4}
+\contentsline {chapter}{\numberline {5}"Some implementation"}{13}{chapter.5}
+\contentsline {chapter}{\numberline {6}Testing and Results}{15}{chapter.6}
+\contentsline {chapter}{\numberline {7}Discussion}{17}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusion}{19}{chapter.8}
+\contentsline {chapter}{Bibliography}{20}{chapter.8}
+\contentsline {chapter}{Bibliography}{21}{chapter*.14}
