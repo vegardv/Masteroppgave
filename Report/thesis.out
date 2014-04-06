@@ -4,25 +4,45 @@
 \BOOKMARK [0][-]{chapter*.3}{Preface}{}% 4
 \BOOKMARK [0][-]{chapter*.4}{Acronyms}{}% 5
 \BOOKMARK [0][-]{chapter*.6}{Contents}{}% 6
-\BOOKMARK [0][-]{chapter*.7}{List of Figures}{}% 7
-\BOOKMARK [0][-]{chapter*.8}{List of Tables}{}% 8
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 9
-\BOOKMARK [1][-]{section.1.1}{Background and motivation}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.2}{Previous work}{chapter.1}% 11
-\BOOKMARK [1][-]{section.1.3}{Contribution and scope of this report}{chapter.1}% 12
-\BOOKMARK [1][-]{section.1.4}{Organization of this report}{chapter.1}% 13
-\BOOKMARK [0][-]{chapter.2}{Description of the UAV}{}% 14
-\BOOKMARK [1][-]{section.2.1}{APM}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.1.1}{Modes of Operation}{section.2.1}% 16
-\BOOKMARK [2][-]{subsection.2.1.2}{Sensors}{section.2.1}% 17
-\BOOKMARK [2][-]{subsection.2.1.3}{Interfaces}{section.2.1}% 18
-\BOOKMARK [1][-]{section.2.2}{PandaBoard ES}{chapter.2}% 19
-\BOOKMARK [2][-]{subsection.2.2.1}{Interfaces}{section.2.2}% 20
-\BOOKMARK [0][-]{chapter.3}{"Some chapter"}{}% 21
-\BOOKMARK [0][-]{chapter.4}{Background Theory}{}% 22
-\BOOKMARK [0][-]{chapter.5}{"Some implementation"}{}% 23
-\BOOKMARK [0][-]{chapter.6}{Testing and Results}{}% 24
-\BOOKMARK [0][-]{chapter.7}{Discussion}{}% 25
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 26
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 27
-\BOOKMARK [0][-]{chapter*.14}{Bibliography}{}% 28
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 7
+\BOOKMARK [1][-]{section.1.1}{Background and motivation}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Previous work}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.3}{Contribution and scope of this report}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.4}{Organization of this report}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{Background Theory}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Reference Frames}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{Computer Vision}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{OpenCV}{section.2.2}% 15
+\BOOKMARK [0][-]{chapter.3}{Description of the UAV}{}% 16
+\BOOKMARK [1][-]{section.3.1}{APM}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.1.1}{Modes of Operation}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.2}{Sensors}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.3}{Interfaces}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{PandaBoard ES}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Interfaces}{section.3.2}% 22
+\BOOKMARK [1][-]{section.3.3}{Software}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.1}{IMC}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.2}{Dune}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.3}{Neptus}{section.3.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Pickup and Deployment Mechanism}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Overall Description}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.2}{Hardware}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.2.1}{IR-LED Position Sensor}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.2}{H-Bridge}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.3}{Level Translator}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.4}{PWM-Controller}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{Communication Between the Modules}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Power Supply}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Camera Application}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.5.1}{Tracking the Sensor Node}{section.4.5}% 37
+\BOOKMARK [0][-]{chapter.5}{Control Software}{}% 38
+\BOOKMARK [0][-]{chapter.6}{Software In The Loop Testing}{}% 39
+\BOOKMARK [1][-]{section.6.1}{SITL-Setup}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.2}{Some test 1}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.3}{Some test 2}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.4}{Results}{chapter.6}% 43
+\BOOKMARK [0][-]{chapter.7}{Testing and Results}{}% 44
+\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 45
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 46
+\BOOKMARK [0][-]{chapter.9}{Bibliography}{}% 47
+\BOOKMARK [0][-]{chapter*.28}{Bibliography}{}% 48

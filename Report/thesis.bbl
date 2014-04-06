@@ -1,3 +1,190 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{3DRobotics}{2013}]{storeGPS}
+3DRobotics (2013).
+\newblock \url{store.3drobotics.com/products/3dr-gps-ublox-with-compass}.
+
+\bibitem[\protect\astroncite{{Analog Devices}}{2005}]{adg3300}
+{Analog Devices} (2005).
+\newblock Adg3300 datasheet.
+\newblock \url{www.analog.com/static/imported-files/data_sheets/ADG3300.pdf}.
+
+\bibitem[\protect\astroncite{ArduPilot}{2013}]{devArdupilot}
+ArduPilot (2013).
+\newblock Ardupilot development site.
+\newblock \url{dev.ardupilot.com/}.
+
+\bibitem[\protect\astroncite{Ardupilot}{2013}]{flight}
+Ardupilot (2013).
+\newblock Setting up flight modes.
+\newblock \url{copter.ardupilot.com/wiki/flight-modes/}.
+
+\bibitem[\protect\astroncite{Berberan-Santos
+  et~al.}{1997}]{Berberan-Santos1997}
+Berberan-Santos, M.~N., Bodunov, E.~N., and Pogliani, L. (1997).
+\newblock On the barometric formula.
+\newblock {\em American Journal of Physics}, 65(5):404--412.
+
+\bibitem[\protect\astroncite{Canny}{1986}]{canny}
+Canny, J. (1986).
+\newblock A computational approach to edge detection.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
+  on}, PAMI-8(6):679--698.
+
+\bibitem[\protect\astroncite{Catsoulis}{2005}]{embedded}
+Catsoulis, J. (2005).
+\newblock {\em Designing Embedded Hardware}.
+\newblock O'Reilly Media, second edition edition.
+
+\bibitem[\protect\astroncite{{e-con Systems}}{2013a}]{camera_power}
+{e-con Systems} (2013a).
+\newblock Camera module features.
+\newblock \url{www.e-consystems.com/OMAP4-MIPI-Camera-Board.asp}.
+
+\bibitem[\protect\astroncite{{e-con Systems}}{2013b}]{camera}
+{e-con Systems} (2013b).
+\newblock e-cam51\_44x hardware user manual.
+\newblock \url{www.e-consystems.com/doc_OMAP4_MIPI_Camera.asp}.
+
+\bibitem[\protect\astroncite{Fossen}{2011}]{Fossen}
+Fossen, T.~I. (2011).
+\newblock {\em Handbook of Marine Craft Hydrodynamics and Motion Control}.
+\newblock Wiley, 1 edition.
+
+\bibitem[\protect\astroncite{iGage}{2013}]{cep}
+iGage (2013).
+\newblock Gps accuracy.
+\newblock \url{www.igage.com/mp/GPSAccuracy.htm}.
+
+\bibitem[\protect\astroncite{Jay~Esfandyari}{2010}]{gyro}
+Jay~Esfandyari, Roberto De~Nuccio, G.~X. (2010).
+\newblock Introduction to mems gyroscopes.
+\newblock \url{electroiq.com/blog/2010/11/introduction-to-mems-gyroscopes/}.
+
+\bibitem[\protect\astroncite{Liu}{2011}]{mems}
+Liu, C. (2011).
+\newblock {\em Foundations of MEMS (2nd Edition)}.
+\newblock Prentice Hall, 2 edition.
+
+\bibitem[\protect\astroncite{LSTS}{2014a}]{LSTS}
+LSTS (2014a).
+\newblock About lsts.
+\newblock \url{http://lsts.fe.up.pt/about}.
+
+\bibitem[\protect\astroncite{LSTS}{2014b}]{DUNE}
+LSTS (2014b).
+\newblock Dune: Unified navigation environment.
+\newblock \url{http://lsts.fe.up.pt/software/dune}.
+
+\bibitem[\protect\astroncite{LSTS}{2014c}]{IMC}
+LSTS (2014c).
+\newblock Imc, inter-module communication protocol.
+\newblock \url{http://lsts.fe.up.pt/software/imc}.
+
+\bibitem[\protect\astroncite{LSTS}{2014d}]{neptus}
+LSTS (2014d).
+\newblock Neptus command and control software.
+\newblock \url{http://lsts.fe.up.pt/software/neptus}.
+
+\bibitem[\protect\astroncite{Mason and Thurston}{1957}]{Mason1957}
+Mason, W.~P. and Thurston, R.~N. (1957).
+\newblock Use of piezoresistive materials in the measurement of displacement,
+  force, and torque.
+\newblock {\em The Journal of the Acoustical Society of America},
+  29(10):1096--1101.
+
+\bibitem[\protect\astroncite{Mclennan}{2013}]{motor}
+Mclennan (2013).
+\newblock Geared dc instrument motor 1271 series.
+\newblock \url{www.farnell.com/datasheets/526521.pdf}.
+
+\bibitem[\protect\astroncite{{Merriam Webster}}{2013}]{barometer}
+{Merriam Webster} (2013).
+\newblock Definition barometer.
+\newblock \url{www.merriam-webster.com/dictionary/barometer}.
+
+\bibitem[\protect\astroncite{MIPI}{2013}]{img}
+MIPI (2013).
+\newblock Camera interface specifications.
+\newblock \url{www.mipi.org/specifications/camera-interface\#CSI2}.
+
+\bibitem[\protect\astroncite{Mordvintsev and Abid}{2013}]{surf}
+Mordvintsev, A. and Abid, K. (2013).
+\newblock Introduction to surf (speeded-up robust features).
+\newblock
+  \url{opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_feature2d/py_surf_intro/py_surf_intro.html}.
+
+\bibitem[\protect\astroncite{omappedia.org}{2011}]{pandaboard_test}
+omappedia.org (2011).
+\newblock Pandaboard test data.
+\newblock \url{omappedia.org/wiki/Panda_Test_Data}.
+
+\bibitem[\protect\astroncite{omappedia.org}{2012}]{pandaboard}
+omappedia.org (2012).
+\newblock Pandaboard faq.
+\newblock \url{omappedia.org/wiki/PandaBoard_FAQ}.
+
+\bibitem[\protect\astroncite{OpenCV}{2013}]{sift}
+OpenCV (2013).
+\newblock Introduction to sift (scale-invariant feature transform).
+\newblock
+  \url{docs.opencv.org/trunk/doc/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html}.
+
+\bibitem[\protect\astroncite{OpenCV.org}{2013}]{cascade}
+OpenCV.org (2013).
+\newblock Cascade classifier training.
+\newblock \url{docs.opencv.org/doc/user_guide/ug_traincascade.html}.
+
+\bibitem[\protect\astroncite{pandaboard.org}{2011}]{pandaManual}
+pandaboard.org (2011).
+\newblock Pandaboard es system reference manual.
+\newblock
+  \url{pandaboard.org/sites/default/files/board_reference/ES/Panda_Board_Spec_DOC-21054_REV0_1.pdf}.
+
+\bibitem[\protect\astroncite{pandaboard.org}{2013}]{panda}
+pandaboard.org (2013).
+\newblock Pandaboard es technical specs.
+\newblock \url{pandaboard.org/content/platform}.
+
+\bibitem[\protect\astroncite{pololu.com}{2014}]{h-bridge}
+pololu.com (2014).
+\newblock \url{www.pololu.com/product/2136}.
+
+\bibitem[\protect\astroncite{QGroundControl}{2013}]{mavlink}
+QGroundControl (2013).
+\newblock Mavlink micro air vehicle communication protocol.
+\newblock \url{qgroundcontrol.org/mavlink/start}.
+
+\bibitem[\protect\astroncite{Spong et~al.}{2005}]{Spong}
+Spong, M.~W., Hutchinson, S., and Vidyasagar, M. (2005).
+\newblock {\em Robot Modeling and Control}.
+\newblock Wiley, 1 edition.
+
+\bibitem[\protect\astroncite{{Store Norske Leksikon}}{2013}]{mag}
+{Store Norske Leksikon} (2013).
+\newblock Definition magnetometer.
+\newblock \url{snl.no/magnetometer}.
+
+\bibitem[\protect\astroncite{{Texas Instruments}}{2013}]{omap}
+{Texas Instruments} (2013).
+\newblock Omap$^{\rm tm}$ 4 processors.
+\newblock
+  \url{www.ti.com/lsds/ti/omap-applications-processors/omap-4-processors-products.page}.
+
+\bibitem[\protect\astroncite{u~blox}{2012}]{ublox}
+u~blox (2012).
+\newblock Datasheet lea-6 series.
+\newblock
+  \url{www.u-blox.com/images/downloads/Product_Docs/LEA-6_ProductSummary_%28GPS.G6-HW-09002%29.pdf}.
+
+\bibitem[\protect\astroncite{Vik}{2012}]{vik}
+Vik, B. (2012).
+\newblock {\em Integrated Satellite and Inertial Navigation Systems}.
+\newblock Deperatment of Engineering Cybernetics, NTNU.
+
+\bibitem[\protect\astroncite{Voldsund}{2013}]{prosjekt}
+Voldsund, V. (2013).
+\newblock {\em Mechanisms for Drop and Recovery of Sensor Nodes Using UAVs}.
+\newblock Deperatment of Engineering Cybernetics, NTNU.
+
 \end{thebibliography}

@@ -1,6 +1,6 @@
  test_sfun
 
- Timestamp is 52e93e4e (Wed Jan 29 18:45:50 2014)
+ Timestamp is 53205573 (Wed Mar 12 13:39:15 2014)
 
  Preferred load address is 0000000180000000
 
@@ -31,8 +31,8 @@
 
   Address         Publics by Value              Rva+Base               Lib:Object
 
- 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
  0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
  0000:00000000       __ImageBase                0000000180000000     <linker-defined>
  0001:00000000       sf_c1_test_get_eml_resolved_functions_info 0000000180001000 f   c1_test.obj
  0001:00000440       sf_c1_test_get_check_sum   0000000180001440 f   c1_test.obj
@@ -1011,10 +1011,10 @@
  0002:000005f0       __real@4074000000000000    00000001800765f0     c5_test.obj
  0002:000005f8       __real@407e000000000000    00000001800765f8     c5_test.obj
  0002:00000600       __real@4084000000000000    0000000180076600     c5_test.obj
- 0002:00000608       __real@41bf4ddc55000000    0000000180076608     c5_test.obj
- 0002:00000610       __real@41cab36932000000    0000000180076610     c5_test.obj
- 0002:00000618       __real@41ea91255ac00000    0000000180076618     c5_test.obj
- 0002:00000620       __real@41edf0f253200000    0000000180076620     c5_test.obj
+ 0002:00000608       __real@41ba03406b000000    0000000180076608     c5_test.obj
+ 0002:00000610       __real@41c01e619d800000    0000000180076610     c5_test.obj
+ 0002:00000618       __real@41e18a98f4800000    0000000180076618     c5_test.obj
+ 0002:00000620       __real@41e8d03ff0800000    0000000180076620     c5_test.obj
  0002:00000628       __real@41d0fdc424000000    0000000180076628     c6_test.obj
  0002:00000630       __real@41de373a4b000000    0000000180076630     c6_test.obj
  0002:00000638       __real@41e2651c29e00000    0000000180076638     c6_test.obj
@@ -1027,21 +1027,21 @@
  0002:00000af0       _ssBadLevel2ZeroDirectFeedMsg2 0000000180076af0     test_sfun_registry.obj
  0002:00000bd8       __real@41602cbca0000000    0000000180076bd8     test_sfun_registry.obj
  0002:00000be0       __real@4174e22010000000    0000000180076be0     test_sfun.obj
- 0002:00000be8       __real@41b5d31567000000    0000000180076be8     test_sfun.obj
- 0002:00000bf0       __real@41c439d4aa000000    0000000180076bf0     test_sfun.obj
- 0002:00000bf8       __real@41c5a82d37000000    0000000180076bf8     test_sfun.obj
- 0002:00000c00       __real@41c5d358a4800000    0000000180076c00     test_sfun.obj
+ 0002:00000be8       __real@41b20a9e6f000000    0000000180076be8     test_sfun.obj
+ 0002:00000bf0       __real@41b4abc01b000000    0000000180076bf0     test_sfun.obj
+ 0002:00000bf8       __real@41c439d4aa000000    0000000180076bf8     test_sfun.obj
+ 0002:00000c00       __real@41c5a82d37000000    0000000180076c00     test_sfun.obj
  0002:00000c08       __real@41d03fc151000000    0000000180076c08     test_sfun.obj
  0002:00000c10       __real@41da0d56b0000000    0000000180076c10     test_sfun.obj
- 0002:00000c18       __real@41e256c095400000    0000000180076c18     test_sfun.obj
- 0002:00000c20       __real@41e4e67ac3600000    0000000180076c20     test_sfun.obj
- 0002:00000c28       __real@41e62c886f200000    0000000180076c28     test_sfun.obj
- 0002:00000c30       __real@41ea8f1e72e00000    0000000180076c30     test_sfun.obj
- 0002:00000c38       __real@41ea9b1cf3400000    0000000180076c38     test_sfun.obj
- 0002:00000c40       __real@41eb5a136b000000    0000000180076c40     test_sfun.obj
- 0002:00000c48       __real@41eb865820a00000    0000000180076c48     test_sfun.obj
- 0002:00000c50       __real@41ed08af7be00000    0000000180076c50     test_sfun.obj
- 0002:00000c58       __real@41efff5969e00000    0000000180076c58     test_sfun.obj
+ 0002:00000c18       __real@41defd7556c00000    0000000180076c18     test_sfun.obj
+ 0002:00000c20       __real@41e256c095400000    0000000180076c20     test_sfun.obj
+ 0002:00000c28       __real@41e49e1b73800000    0000000180076c28     test_sfun.obj
+ 0002:00000c30       __real@41e4e67ac3600000    0000000180076c30     test_sfun.obj
+ 0002:00000c38       __real@41e62c886f200000    0000000180076c38     test_sfun.obj
+ 0002:00000c40       __real@41ea8f1e72e00000    0000000180076c40     test_sfun.obj
+ 0002:00000c48       __real@41ea9b1cf3400000    0000000180076c48     test_sfun.obj
+ 0002:00000c50       __real@41eb5a136b000000    0000000180076c50     test_sfun.obj
+ 0002:00000c58       __real@41ed08af7be00000    0000000180076c58     test_sfun.obj
  0002:00000c60       ??_C@_09GIFEIFFL@sfprivate?$AA@ 0000000180076c60     sfc_mex:sfc_sf.obj
  0002:00000c70       ??_C@_0CC@JDELABLI@get_machine_and_chart_file_numbe@ 0000000180076c70     sfc_mex:sfc_sf.obj
  0002:00000c98       ??_C@_0BO@JCKKMPIB@get_sfun_block_specialization?$AA@ 0000000180076c98     sfc_mex:sfc_sf.obj

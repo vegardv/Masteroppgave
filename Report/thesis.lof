@@ -1,10 +1,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces ArduCopter Hexacopter \textit {Courtesy arducopter.co.uk}}}{3}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces APM 2.6 with a voltage regulator and an external magnetometer and GPS module \textit {Courtesy diydrones.com}}}{4}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Message definition of message with ID 24 \textit {Courtesy of wikipedia.org}}}{7}{figure.2.3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces HSV-color wheel \textit {Courtesy of had2know.com}}}{8}{figure.2.1}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces ArduCopter Hexacopter \textit {Courtesy arducopter.co.uk}}}{11}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces APM 2.6 with a voltage regulator and an external magnetometer and GPS module \textit {Courtesy diydrones.com}}}{12}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Message definition of message with ID 24 \textit {Courtesy of wikipedia.org}}}{15}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of IMC message definition}}{16}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Task interaction using IMC \textit {Courtesy lsts.fe.up.pt}}}{17}{figure.3.5}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Drop and recovery mechanism mounted to the hexacopter}}{20}{figure.4.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gripper raised}}}{20}{figure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Gripper lowered}}}{20}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Schematics for the IR-LED Position Sensor}}{21}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Schematics for the Level Translator}}{22}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Schematics for the PWM-Controller}}{23}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Communication between the modules}}{23}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Power circuit}}{25}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Use of color recognition to track the mount of the sensor node}}{27}{figure.4.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Original image}}}{27}{figure.4.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {HSV image}}}{27}{figure.4.7}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Green thresholded}}}{27}{figure.4.7}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Yellow thresholded}}}{27}{figure.4.7}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Result}}}{27}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Visualization of the different coordinate systems}}{30}{figure.4.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

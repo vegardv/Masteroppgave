@@ -3,6 +3,42 @@
 \chapter{Introduction}
 %%=========================================
 \section{Background and motivation}
+Unmanned aerial vehicles (UAVs) are aircraft without a human operator on board. They can fly autonomously or be remotely operated by a pilot on the ground. The use of UAVs have exploded in recent years. This is due to a lot of ongoing research and development conducted by companies, scientists and enthusiasts. Some of this research and development have resulted in open source projects that have made advanced UAV technology availably at very low cost.\\
+\newline
+The UAV used in this project will be based on one of these open source UAV solutions. This solution is chosen because it is cost efficient, results of the project will be easy to use by others, and it is a way to get going fast and still be able to do some customization.\\
+\newline
+This project is a part of research conducted by the Center of Autonomous Marine Operations and Systems (AMOS) at NTNU. AMOS is now establishing a new laboratory with field experimental capabilities (UAV-Lab). This project is related to this lab. To be a part of the research at AMOS opens up a lot of opportunities, but it also means that some things have to be standardized. For instance the choice of UAV and the use of PandaBoard as onboard computer follows standards decided by AMOS. Use of DUNE as an environment to structure and develop the software running on the onboard computer and the use of NEPTUS as a ground control station is also according to AMOS standards.\\
+\newline
+The goal of this project is to create a mechanism that can be used for sensor node pickup and deployment by the use of multicopters. The sensor node will be a lightweight packet that can contain different sensors depending on the mission. These sensor nodes will be dropped into the sea where they will float on the surface. Examples of use for the sensor nodes can be to log temperature, currents, salinity or water quality. Hence they can be very useful in for instance climate research or for detecting oil spills.\\
+\newline
+Both fixed-wing and multicopter UAVs will be part of the sensor node pickup and deployment system and supplement each other in the UAV-lab. Multicopters will be used in coastal areas and at relatively good weather conditions, while fixed-wing UAVs have a much greater range and will be used for longer missions and in rougher weather conditions.\\
+\newline
+The project will be continued into a master thesis where the created mechanism will be used for sensor node pickup and deployment. This means that the goal of this project is not to create a fully operational system with seamless integration between the modules, but to make different modules that are ready to be used in the master thesis. This report should be read in this context.
 \section{Previous work}
+As already mentioned there has been a lot of research on UAVs in recent years, but most of this research have focused on fixed-wing aerial vehicles. And the applications have usually been limited to monitoring and search \citep{Mellinger2011}.\\
+\newline
+The latest couple of years have shown some research on rotary-wing aircraft interacting with the environment in different ways. There have been conducted research where the UAV is used to manipulate its environment. Two examples of this using two different strategies are \citep{jiang} and \citep{cartesian}. Lippiello and Ruggiero are inspired by the use of impedance control in robot manipulation tasks, while Jiang and Voyles alters a hexacopter by tilting the motors, making it possible to create a horizontal force without tilting the hexacopter.\\ 
+\newline
+The most relevant applications to highlight in this report are those that use different strategies for drop off and pickup of objects. Possibilities of using an avian catching fish as an inspiration for a quadcopter based gripper system to be able to execute high speed pickup have been explored by \citep{Thomas2013}. A gripper on the end of a link with two joints is used to replicate an avians leg and claw. Good results were achieved as the quadcopter was able to grasp targets at speeds up to 3 m/s. The trajectory of the pickup was decided pre run time to match the trajectory of the avian. Feedback to the controller was given using VICON\footnote{A very accurate external motion capture system}.\\
+\newline
+The use of a helicopter to grasp objects on the ground are explored in \citep{Pounds}. The ability to grasp objects of different shapes and without a perfect lined up position is in focus for the gripper design. Tests demonstrated an ability to grasp objects of different shapes and sizes under human control of the helicopter. The most difficult objects were grasped 67 \% of the time, while the easiest object was grasped 100 \% of the time.\\
+\newline
+Estimation of payload parameters are explored in \citep{Mellinger2011} as well as mechanical design and controller for aerial grasping. Relevant parameters to estimate are mass and inertia. These estimates can be used to adapt the controller and to check if the object was successfully picked up or not.
 \section{Contribution and scope of this report}
+Some of the research presented in the previous section picks up objects lying on the ground (in some of them at exactly known positions). The fact that the aim in the master project is to pick up sensor nodes that are floating affected by waves, wind and currents add another dimension to the challenge. Navigation at sea means that one can not rely on external sensor systems like for instance VICO. This means that accurate positioning above the sensor node will be a challenge. The UAV will have to rely on poor position measurements and some added sensor system, for instance camera, to close the loop between the UAV and the sensor node.\\
+\newline
+This project aims to connect known techniques and theory from different fields in new ways to make pickup and deployment of sensor nodes by the use of UAVs at sea possible.
 \section{Organization of this report}
+The UAV used in this project is described in Chapter 2. This description includes the most relevant features to give the reader insight into which possibilities that lie within the UAV. The PandaBoard that is used as onboard computer is also described for the same reasons.\\
+\newline
+Different possible design solutions are described in Chapter 3. The chapter starts with some design choices that are common for all the solutions and continues with specifics about the different proposals. Both advantages and limitations of the different solutions are considered before the chapter ends in a conclusion of which design solution to implement.\\
+\newline
+An introduction to the relevant reference frames used for navigation, control and object tracking, as well as some features of the open source computer vision library OpenCV are given in Chapter 4.\\
+\newline
+Chapter 5 presents the implementation of the chosen design solution. It covers mechanical design, node tracking using camera, communication between the different modules, some circuit design and power supply.\\
+\newline
+The tests of the design solution with associated results are described in Chapter 6. Some of the key features that are tested are weight limitations on the sensor node, accuracy of the node tracking  and robustness of the mechanical design.\\
+\newline
+The implemented design solution is discussed in Chapter 8, before conclusions are drawn in Chapter 9.\\
+\newline
+The digital appendix included with this report contains source code used for the experiments and the node tracking algorithm. Solidworks models of the 3D-printed parts are included as a resource if the reader wants to replicate the design solution.

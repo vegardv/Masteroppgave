@@ -3,31 +3,41 @@ clc;
 clf;
 clear;
 
+% % MODEL
+% % Parameters
+% m = 0.468;
+% I = diag([4.856e-3,4.856e-3,8.801e-3]);%diag([4.856e-3, 4.856e-3, 8.801e-3]);
+% g = 9.81;
+% b = 1.140e-7;
+% k = 2.980e-6;
+% l = 0.225;
+% time = 10;
+
 % MODEL
 % Parameters
-m = 0.468;
-I = diag([4.856e-3,4.856e-3,8.801e-3]);%diag([4.856e-3, 4.856e-3, 8.801e-3]);
+m = 3;
+I = diag([0.1, 0.1, 0.2]);
 g = 9.81;
-b = 1.140e-7;
-k = 2.980e-6;
-l = 0.225;
+b = 0.1;
+k = 3;
+l = 0.25;
 time = 10;
+
 
 % CONTROLLER
 % Controller attitude
-K_p = diag([0.25,0.25,0.25]);
+K_p = diag([1,1,0.45]);
 K_i = diag([0,0,0]);
-K_d = diag([-0.25,-0.25,-0.25]);
+K_d = diag([-0.5,-0.5,-0.5]);
 
 % Controller altitude
 k_p = 10;
-k_i = 10;
-k_d = -5;
+k_i = 3;
+k_d = -8;
 
 % Controller position
-K_p_pos = 0.1*eye(2);
+K_p_pos = 0.5*eye(2);
 K_d_pos = 2*sqrt(K_p_pos(1,1))*eye(2);
-
 
 % INITIAL VALUES
 eta_0 = [0,0,-10,0,0,0]';
@@ -35,7 +45,7 @@ nu_0 = [0,0,0,0,0,0]';
 
 % REFERENCE VALUES
 psi_ref = 0;
-pos_ref = [10,20,-10]';
+pos_ref = [10,10,-10]';
 
 % SIMULATE
 sim('test');
@@ -79,8 +89,8 @@ xlabel('time [s]');
 ylabel('\psi [rad]');
 
 % Plot ned XY
-% figure(3)
-% plot(UAVPos.Data(1:end,2), UAVPos.Data(1:end,1));
+ figure(3)
+ plot(UAVPos.Data(1:end,2), UAVPos.Data(1:end,1));
 
 % Plot u
 figure(4)

@@ -16,22 +16,10 @@ A level-1 auxiliary file: chapter07.aux
 A level-1 auxiliary file: chapter08.aux
 The style file: apa.bst
 Database file #1: bibtex/scopus.bib
-Warning--I didn't find a database entry for "devArdupilot"
-Warning--I didn't find a database entry for "flight"
-Warning--I didn't find a database entry for "barometer"
-Warning--I didn't find a database entry for "Berberan-Santos1997"
-Warning--I didn't find a database entry for "mems"
-Warning--I didn't find a database entry for "Mason1957"
-Warning--I didn't find a database entry for "mag"
-Warning--I didn't find a database entry for "vik"
-Warning--I didn't find a database entry for "gyro"
-Warning--I didn't find a database entry for "storeGPS"
-Warning--I didn't find a database entry for "cep"
-Warning--I didn't find a database entry for "ublox"
-Warning--I didn't find a database entry for "mavlink"
-Warning--I didn't find a database entry for "omap"
-Warning--I didn't find a database entry for "panda"
-Warning--I didn't find a database entry for "pandaManual"
-Warning--I didn't find a database entry for "camera"
-Warning--I didn't find a database entry for "img"
-(There were 18 warnings)
+Warning--I didn't find a database entry for "Mellinger2011"
+Warning--I didn't find a database entry for "jiang"
+Warning--I didn't find a database entry for "cartesian"
+Warning--I didn't find a database entry for "Thomas2013"
+Warning--I didn't find a database entry for "Pounds"
+Warning--I didn't find a database entry for "opencv"
+(There were 6 warnings)

@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: PWMDriver.PcbDoc   05.04.2014  10:55:33
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : PWMDriver.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.9mm (35.433mil)        Round          20               71.96 mm (2.83 Inch)
+T2        1.7mm (66.929mil)        Round          4                47.50 mm (1.87 Inch)
+---------------------------------------------------------------------------
+Totals                                            24               119.45 mm (4.70 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
