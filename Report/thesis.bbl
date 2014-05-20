@@ -4,6 +4,13 @@
 3DRobotics (2013).
 \newblock \url{store.3drobotics.com/products/3dr-gps-ublox-with-compass}.
 
+\bibitem[\protect\astroncite{Alaimo et~al.}{2013}]{model}
+Alaimo, A., Artale, V., Milazzo, C., Ricciardello, A., and Trefiletti, L.
+  (2013).
+\newblock Mathematical modeling and control of a hexacopter.
+\newblock In {\em Unmanned Aircraft Systems (ICUAS), 2013 International
+  Conference on}, pages 1043--1050.
+
 \bibitem[\protect\astroncite{{Analog Devices}}{2005}]{adg3300}
 {Analog Devices} (2005).
 \newblock Adg3300 datasheet.
@@ -154,6 +161,11 @@ pololu.com (2014).
 QGroundControl (2013).
 \newblock Mavlink micro air vehicle communication protocol.
 \newblock \url{qgroundcontrol.org/mavlink/start}.
+
+\bibitem[\protect\astroncite{S{{\o}}rensen}{2013}]{sorensen}
+S{{\o}}rensen, A. (2013).
+\newblock {\em Marine Control Systems - Propulsion and Motion Control of Ships
+  and Ocean Structures}.
 
 \bibitem[\protect\astroncite{Spong et~al.}{2005}]{Spong}
 Spong, M.~W., Hutchinson, S., and Vidyasagar, M. (2005).

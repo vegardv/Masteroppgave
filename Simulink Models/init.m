@@ -1,6 +1,7 @@
 
 clc;
 clf;
+close all;
 clear;
 
 % % MODEL
@@ -21,27 +22,35 @@ g = 9.81;
 b = 0.1;
 k = 3;
 l = 0.25;
-time = 10;
+time = 50;
 
 
 % CONTROLLER
 % Controller attitude
-K_p = diag([1,1,0.45]);
+K_p = diag([20,20,0.45]);
 K_i = diag([0,0,0]);
-K_d = diag([-0.5,-0.5,-0.5]);
+K_d = diag([-1,-1,-0.5]);
 
 % Controller altitude
-k_p = 10;
-k_i = 3;
-k_d = -8;
+k_p = 100;
+k_i = 150;
+k_d = -20;
 
 % Controller position
 K_p_pos = 0.5*eye(2);
 K_d_pos = 2*sqrt(K_p_pos(1,1))*eye(2);
+K_i_pos = 0.05 * eye(2);
 
 % INITIAL VALUES
-eta_0 = [0,0,-10,0,0,0]';
+eta_0 = [0,0,0,0,0,0]';
 nu_0 = [0,0,0,0,0,0]';
+
+% Node position
+nodePosition = [0.5,0.5,0]';
+
+% Disturbance
+wind = [0.5,0]';
+windDir = 0;
 
 % REFERENCE VALUES
 psi_ref = 0;
@@ -50,16 +59,13 @@ pos_ref = [10,10,-10]';
 % SIMULATE
 sim('test');
 
-
 % PLOT RESULTS
 % Plot pos
 figure(1)
 subplot(3,1,1)
 plot(UAVPos.Time, UAVPos.Data(1:end, 1), UAVPos.Time, pos_ref.Data(1:end, 1));
 ylabel('N [m]');
-title('Position of UAV');
 legend('Position', 'Reference')
-
 
 subplot(3,1,2)
 plot(UAVPos.Time, UAVPos.Data(1:end, 2), UAVPos.Time, pos_ref.Data(1:end, 2));
@@ -69,10 +75,10 @@ subplot(3,1,3)
 plot(UAVPos.Time, UAVPos.Data(1:end, 3), UAVPos.Time, D_ref.Data(1:end, 1));
 xlabel('time [s]');
 ylabel('D [m]');
+saveas(1, 'C:\Users\vegardvo\Documents\GitHub\Masteroppgave\Report\fig\plots\simulation\positionNoDisturbance.eps', 'eps2c')
 
 % Plot attitude
 figure(2)
-
 subplot(3,1,1)
 plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 1), UAVPos.Time, Theta_ref.Data(1:end, 1));
 ylabel('\phi [rad]');
@@ -130,6 +136,11 @@ subplot(3,2,6)
 plot(UAVAttitude.Time, omega.Data(1:end, 6));
 
 figure(6)
-pathPlotterNode(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),  cornersX.Data(:,:), cornersY.Data(:,:), UAVPos.Time(2), 10, inframe.Data(:), [10,10]');
+pathPlotterNode(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),  cornersX.Data(:,:), cornersY.Data(:,:), UAVPos.Time(2), 10, inframe.Data(:), nodePosition);
+saveas(6, 'C:\Users\vegardvo\Documents\GitHub\Masteroppgave\Report\fig\plots\simulation\positionFrameNoDisturbance.eps', 'eps2c')
+
 %pathPlotter(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80, 0, time, 0,0);
 %pathPlotter3d(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),UAVPos.Data(1:end,3), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80);
+
+figure(7)
+plot(inframe.Time, inframe.Data);

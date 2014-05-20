@@ -71,7 +71,18 @@ s_\psi c_\theta & c_\psi c_\phi + s_\phi s_\theta s_\psi & -c_\psi s_\phi + s_\t
 \end{bmatrix}
 \label{R_ned}
 \end{eqnarray}
-The notation s and c with an angle as subscript is used to represent $\sin (angle)$ and $cos (angle)$ respectively. This notation is used throughout this report.
+The notation s and c with an angle as subscript is used to represent $\sin (angle)$ and $cos (angle)$ respectively. This notation is used throughout this report.\\
+\newline
+A BODY fixed angular velocity vector $\boldsymbol{\omega}_{b/n}^b = [p, q, r]^T$ and the Euler rate vector are related through a transformation matrix according to equation (\ref{trans}).
+\begin{eqnarray}
+\dot{\boldsymbol{\Theta}}_{nb} &=& \boldsymbol{T}_\Theta(\boldsymbol{\Theta}_{nb})\boldsymbol{\omega}_{b/n}^b\\
+\boldsymbol{T}_\Theta(\boldsymbol{\Theta}_{nb}) &=& \begin{bmatrix}
+1 && s_\phi t_\theta && c_\phi t_\theta\\
+0 && c_\phi && -s_\phi\\
+0 && s_\phi / c_\theta && c_\phi / c_\theta
+\end{bmatrix}  
+\label{trans}
+\end{eqnarray}
 \subsubsection{Denavit-Hartenberg Convention}
 The DH convention is a systematic procedure for relating orientation and position of different reference frames, and a tool to select frames. The homogeneous transformation $A_i$ (the transformation matrix from reference system $i-1$ to reference system $i$) is represented as a product of four basic transformations 
 \begin{eqnarray}
@@ -128,7 +139,28 @@ $\boldsymbol{T}_j^i$ for $i<j$ contain a rotation matrix $\boldsymbol{R}_i^j$ fr
 0 & 1
 \end{bmatrix}
 \label{T}
-\end{eqnarray}  
+\end{eqnarray}
+\section{Rigid-Body Kinetics}
+The motion of rigid bodies can be expressed according to \citep{Fossen} as shown in equation \ref{RB}.
+\begin{eqnarray}
+\boldsymbol{M}_{RB}\boldsymbol{\dot{\nu}} + \boldsymbol{C}_{RB}(\boldsymbol{\nu})\boldsymbol{\nu} = \boldsymbol{\tau}_{RB}
+\label{RB}
+\end{eqnarray}
+Where $\boldsymbol{M}_{RB}$ is the rigid-body mass matrix, $\boldsymbol{C}_{RB}$ is the rigid-body Coriolis and centripetal matrix due to rotation about the inertial frame. $\boldsymbol{\nu} = [u, v, w, p, q, r]^T$ is the velocity vector expressed in the BODY-frame, and $\boldsymbol{\tau}_{RB} = [X, Y, Z, K, M, N]^T$ is the forces and moments acting upon the body, also expressed in the BODY-frame.\\
+\newline
+Using Newton-Euler equations and assuming center of origin and center of gravity in the same place, \citep{Fossen} derives the rigid-body mass matrix and the rigid-body Coriolis and centripetal matrix as shown in equation \ref{RB2}.
+\begin{eqnarray}
+\boldsymbol{M}_{RB} = \begin{bmatrix}
+m\boldsymbol{I}_{3 \times 3} & \boldsymbol{0}_{3 \times 3} \\
+\boldsymbol{0}_{3 \times 3} & \boldsymbol{I}_g
+\end{bmatrix} \;\;\;
+\boldsymbol{C}_{RB} = \begin{bmatrix}
+m\boldsymbol{S}(\boldsymbol{\omega}) & \boldsymbol{0}_{3 \times 3}\\
+\boldsymbol{0}_{3 \times 3} & -\boldsymbol{S}(\boldsymbol{I}_g\boldsymbol{\omega})
+\end{bmatrix}
+\label{RB2}
+\end{eqnarray}
+Here $\boldsymbol{I}_g$ is the inertia matrix, $m$ is the mass, $\boldsymbol{\omega} = [p, q, r]^T$  is the rotational velocity and $\boldsymbol{S}()$ is the skew symmetric matrix operator.
 \section{Computer Vision}
 \subsection{OpenCV}\label{opencv}
 OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library that has more than 2500 optimized algorithms \citep{opencv}. A few of these algorithms will be briefly explained here. The ones explained are the most relevant for object recognition.
@@ -153,3 +185,4 @@ There are tools in OpenCV that take the positive samples and creates many new po
 \subsubsection{SURF}
 Speeded Up Robust Features (SURF) is a further development and speeded up algorithm on the basis of SIFT (Scale-Invariant Feature Transform) \citep{surf}. These algorithms use a single picture of the object for the recognition. Based on different techniques beyond the scope of this text, key points are found describing the object. The key points is assigned an orientation to achieve invariance to image rotation, and the way the key point is selected make the algorithm scale invariant \citep{sift}.\\\newline
 For commercial use one should note that both SURF and SIFT is patented and part of a non-free module in OpenCV.
+\section{Haversine Formula}

@@ -11,38 +11,55 @@
 \BOOKMARK [1][-]{section.1.4}{Organization of this report}{chapter.1}% 11
 \BOOKMARK [0][-]{chapter.2}{Background Theory}{}% 12
 \BOOKMARK [1][-]{section.2.1}{Reference Frames}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.2}{Computer Vision}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.1}{OpenCV}{section.2.2}% 15
-\BOOKMARK [0][-]{chapter.3}{Description of the UAV}{}% 16
-\BOOKMARK [1][-]{section.3.1}{APM}{chapter.3}% 17
-\BOOKMARK [2][-]{subsection.3.1.1}{Modes of Operation}{section.3.1}% 18
-\BOOKMARK [2][-]{subsection.3.1.2}{Sensors}{section.3.1}% 19
-\BOOKMARK [2][-]{subsection.3.1.3}{Interfaces}{section.3.1}% 20
-\BOOKMARK [1][-]{section.3.2}{PandaBoard ES}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.2.1}{Interfaces}{section.3.2}% 22
-\BOOKMARK [1][-]{section.3.3}{Software}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.1}{IMC}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.2}{Dune}{section.3.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.3}{Neptus}{section.3.3}% 26
-\BOOKMARK [0][-]{chapter.4}{Pickup and Deployment Mechanism}{}% 27
-\BOOKMARK [1][-]{section.4.1}{Overall Description}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.2}{Hardware}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.2.1}{IR-LED Position Sensor}{section.4.2}% 30
-\BOOKMARK [2][-]{subsection.4.2.2}{H-Bridge}{section.4.2}% 31
-\BOOKMARK [2][-]{subsection.4.2.3}{Level Translator}{section.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.2.4}{PWM-Controller}{section.4.2}% 33
-\BOOKMARK [1][-]{section.4.3}{Communication Between the Modules}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.4}{Power Supply}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.5}{Camera Application}{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.5.1}{Tracking the Sensor Node}{section.4.5}% 37
-\BOOKMARK [0][-]{chapter.5}{Control Software}{}% 38
-\BOOKMARK [0][-]{chapter.6}{Software In The Loop Testing}{}% 39
-\BOOKMARK [1][-]{section.6.1}{SITL-Setup}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.2}{Some test 1}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.3}{Some test 2}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.4}{Results}{chapter.6}% 43
-\BOOKMARK [0][-]{chapter.7}{Testing and Results}{}% 44
-\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 45
-\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 46
-\BOOKMARK [0][-]{chapter.9}{Bibliography}{}% 47
-\BOOKMARK [0][-]{chapter*.28}{Bibliography}{}% 48
+\BOOKMARK [1][-]{section.2.2}{Rigid-Body Kinetics}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Computer Vision}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{OpenCV}{section.2.3}% 16
+\BOOKMARK [1][-]{section.2.4}{Haversine Formula}{chapter.2}% 17
+\BOOKMARK [0][-]{chapter.3}{Description of the UAV}{}% 18
+\BOOKMARK [1][-]{section.3.1}{APM}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.1}{Modes of Operation}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.2}{Sensors}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.3}{Interfaces}{section.3.1}% 22
+\BOOKMARK [1][-]{section.3.2}{PandaBoard ES}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{Interfaces}{section.3.2}% 24
+\BOOKMARK [1][-]{section.3.3}{Software}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.1}{IMC}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.2}{Dune}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.3}{Neptus}{section.3.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Pickup and Deployment Mechanism}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Overall Description}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Hardware}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.2.1}{IR-LED Position Sensor}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.2}{H-Bridge}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.3}{Level Translator}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.4}{PWM-Controller}{section.4.2}% 35
+\BOOKMARK [1][-]{section.4.3}{Communication Between the Modules}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.4}{Power Supply}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.5}{Camera Application}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.5.1}{Tracking the Sensor Node}{section.4.5}% 39
+\BOOKMARK [0][-]{chapter.5}{Control Structure}{}% 40
+\BOOKMARK [1][-]{section.5.1}{Position Controller}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.1.1}{Mathematical Description}{section.5.1}% 42
+\BOOKMARK [2][-]{subsection.5.1.2}{Implementation}{section.5.1}% 43
+\BOOKMARK [1][-]{section.5.2}{Software Implementation}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Simulation of the System}{}% 45
+\BOOKMARK [1][-]{section.6.1}{Mathematical Model of the Hexacopter}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.2}{Simulation of Low Level Controllers and Thrust Allocation in the APM}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.3}{Simulation of the Camera Algorithm}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.4}{Simulink Model}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.5}{Test of Controller}{chapter.6}% 50
+\BOOKMARK [2][-]{subsection.6.5.1}{Simulation Without Disturbances}{section.6.5}% 51
+\BOOKMARK [2][-]{subsection.6.5.2}{Simulation Without Constant Disturbances}{section.6.5}% 52
+\BOOKMARK [2][-]{subsection.6.5.3}{Simulation With Random Disturbances}{section.6.5}% 53
+\BOOKMARK [0][-]{chapter.7}{Software In The Loop Testing}{}% 54
+\BOOKMARK [1][-]{section.7.1}{SITL-Setup}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.2}{Some test 1}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.3}{Some test 2}{chapter.7}% 57
+\BOOKMARK [1][-]{section.7.4}{Results}{chapter.7}% 58
+\BOOKMARK [0][-]{chapter.8}{Testing and Results}{}% 59
+\BOOKMARK [1][-]{section.8.1}{Node Tracking}{chapter.8}% 60
+\BOOKMARK [2][-]{subsection.8.1.1}{Result of Test}{section.8.1}% 61
+\BOOKMARK [0][-]{chapter.9}{Discussion}{}% 62
+\BOOKMARK [0][-]{chapter.10}{Conclusion}{}% 63
+\BOOKMARK [0][-]{chapter.10}{Bibliography}{}% 64
+\BOOKMARK [0][-]{chapter*.39}{Bibliography}{}% 65

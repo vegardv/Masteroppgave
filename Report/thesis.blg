@@ -7,10 +7,12 @@ A level-1 auxiliary file: preface.aux
 A level-1 auxiliary file: acronyms.aux
 A level-1 auxiliary file: figures.aux
 A level-1 auxiliary file: introduction.aux
-A level-1 auxiliary file: chapter02.aux
-A level-1 auxiliary file: chapter0n.aux
-A level-1 auxiliary file: chapter04.aux
-A level-1 auxiliary file: chapter05.aux
+A level-1 auxiliary file: background_theory.aux
+A level-1 auxiliary file: UAV.aux
+A level-1 auxiliary file: mechanism.aux
+A level-1 auxiliary file: controller.aux
+A level-1 auxiliary file: simulator.aux
+A level-1 auxiliary file: SITL.aux
 A level-1 auxiliary file: chapter06.aux
 A level-1 auxiliary file: chapter07.aux
 A level-1 auxiliary file: chapter08.aux
@@ -22,4 +24,5 @@ Warning--I didn't find a database entry for "cartesian"
 Warning--I didn't find a database entry for "Thomas2013"
 Warning--I didn't find a database entry for "Pounds"
 Warning--I didn't find a database entry for "opencv"
-(There were 6 warnings)
+Warning--empty publisher in sorensen
+(There were 7 warnings)
