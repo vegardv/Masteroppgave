@@ -18,10 +18,10 @@
 /* Variable Declarations */
 
 /* Variable Definitions */
-static const char * c6_debug_family_names[14] = { "timeStep", "nargin",
+static const char * c6_debug_family_names[15] = { "timeStep", "nargin",
   "nargout", "measuredNodePos", "measuredNodeHeading", "inFrame", "pos_ref_in",
   "time", "eta", "pos_ref_out", "heading_ref", "heading", "timeLastCycle",
-  "lastDesHeight" };
+  "lastDesHeight", "reachedHeight" };
 
 /* Function Declarations */
 static void initialize_c6_test(SFc6_testInstanceStruct *chartInstance);
@@ -42,7 +42,7 @@ static void init_script_number_translation(uint32_T c6_machineNumber, uint32_T
   c6_chartNumber);
 static const mxArray *c6_sf_marshallOut(void *chartInstanceVoid, void *c6_inData);
 static real_T c6_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
-  mxArray *c6_b_lastDesHeight, const char_T *c6_identifier);
+  mxArray *c6_b_reachedHeight, const char_T *c6_identifier);
 static real_T c6_b_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
 static void c6_sf_marshallIn(void *chartInstanceVoid, const mxArray
@@ -50,7 +50,7 @@ static void c6_sf_marshallIn(void *chartInstanceVoid, const mxArray
 static const mxArray *c6_b_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
 static real_T c6_c_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
-  const mxArray *c6_b_timeLastCycle, const char_T *c6_identifier);
+  const mxArray *c6_b_lastDesHeight, const char_T *c6_identifier);
 static real_T c6_d_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
 static void c6_b_sf_marshallIn(void *chartInstanceVoid, const mxArray
@@ -58,7 +58,7 @@ static void c6_b_sf_marshallIn(void *chartInstanceVoid, const mxArray
 static const mxArray *c6_c_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
 static real_T c6_e_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
-  const mxArray *c6_b_heading, const char_T *c6_identifier);
+  const mxArray *c6_b_timeLastCycle, const char_T *c6_identifier);
 static real_T c6_f_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
 static void c6_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
@@ -66,35 +66,43 @@ static void c6_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
 static const mxArray *c6_d_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
 static real_T c6_g_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
-  const mxArray *c6_heading_ref, const char_T *c6_identifier);
+  const mxArray *c6_b_heading, const char_T *c6_identifier);
 static real_T c6_h_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
 static void c6_d_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData);
 static const mxArray *c6_e_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
-static void c6_i_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
-  mxArray *c6_pos_ref_out, const char_T *c6_identifier, real_T c6_y[3]);
-static void c6_j_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
-  mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId, real_T c6_y[3]);
+static real_T c6_i_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+  const mxArray *c6_heading_ref, const char_T *c6_identifier);
+static real_T c6_j_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+  const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
 static void c6_e_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData);
 static const mxArray *c6_f_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
+static void c6_k_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
+  mxArray *c6_pos_ref_out, const char_T *c6_identifier, real_T c6_y[3]);
+static void c6_l_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
+  mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId, real_T c6_y[3]);
+static void c6_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
+  *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData);
 static const mxArray *c6_g_sf_marshallOut(void *chartInstanceVoid, void
+  *c6_inData);
+static const mxArray *c6_h_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
 static real_T c6_mpower(SFc6_testInstanceStruct *chartInstance, real_T c6_a);
 static void c6_eml_scalar_eg(SFc6_testInstanceStruct *chartInstance);
 static void c6_eml_error(SFc6_testInstanceStruct *chartInstance);
-static const mxArray *c6_h_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_i_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData);
-static int32_T c6_k_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static int32_T c6_m_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
-static void c6_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
+static void c6_g_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData);
-static uint8_T c6_l_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static uint8_T c6_n_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_b_is_active_c6_test, const char_T *c6_identifier);
-static uint8_T c6_m_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static uint8_T c6_o_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId);
 static void init_dsm_address_info(SFc6_testInstanceStruct *chartInstance);
 
@@ -106,6 +114,7 @@ static void initialize_c6_test(SFc6_testInstanceStruct *chartInstance)
   chartInstance->c6_heading_not_empty = FALSE;
   chartInstance->c6_timeLastCycle_not_empty = FALSE;
   chartInstance->c6_lastDesHeight_not_empty = FALSE;
+  chartInstance->c6_reachedHeight_not_empty = FALSE;
   chartInstance->c6_is_active_c6_test = 0U;
 }
 
@@ -148,9 +157,12 @@ static const mxArray *get_sim_state_c6_test(SFc6_testInstanceStruct
   real_T c6_d_hoistedGlobal;
   real_T c6_e_u;
   const mxArray *c6_f_y = NULL;
-  uint8_T c6_e_hoistedGlobal;
-  uint8_T c6_f_u;
+  real_T c6_e_hoistedGlobal;
+  real_T c6_f_u;
   const mxArray *c6_g_y = NULL;
+  uint8_T c6_f_hoistedGlobal;
+  uint8_T c6_g_u;
+  const mxArray *c6_h_y = NULL;
   real_T *c6_heading_ref;
   real_T (*c6_pos_ref_out)[3];
   c6_heading_ref = (real_T *)ssGetOutputPortSignal(chartInstance->S, 2);
@@ -158,7 +170,7 @@ static const mxArray *get_sim_state_c6_test(SFc6_testInstanceStruct
   c6_st = NULL;
   c6_st = NULL;
   c6_y = NULL;
-  sf_mex_assign(&c6_y, sf_mex_createcellarray(6), FALSE);
+  sf_mex_assign(&c6_y, sf_mex_createcellarray(7), FALSE);
   c6_hoistedGlobal = *c6_heading_ref;
   c6_u = c6_hoistedGlobal;
   c6_b_y = NULL;
@@ -193,10 +205,10 @@ static const mxArray *get_sim_state_c6_test(SFc6_testInstanceStruct
   }
 
   sf_mex_setcell(c6_y, 3, c6_e_y);
-  c6_d_hoistedGlobal = chartInstance->c6_timeLastCycle;
+  c6_d_hoistedGlobal = chartInstance->c6_reachedHeight;
   c6_e_u = c6_d_hoistedGlobal;
   c6_f_y = NULL;
-  if (!chartInstance->c6_timeLastCycle_not_empty) {
+  if (!chartInstance->c6_reachedHeight_not_empty) {
     sf_mex_assign(&c6_f_y, sf_mex_create("y", NULL, 0, 0U, 1U, 0U, 2, 0, 0),
                   FALSE);
   } else {
@@ -204,11 +216,22 @@ static const mxArray *get_sim_state_c6_test(SFc6_testInstanceStruct
   }
 
   sf_mex_setcell(c6_y, 4, c6_f_y);
-  c6_e_hoistedGlobal = chartInstance->c6_is_active_c6_test;
+  c6_e_hoistedGlobal = chartInstance->c6_timeLastCycle;
   c6_f_u = c6_e_hoistedGlobal;
   c6_g_y = NULL;
-  sf_mex_assign(&c6_g_y, sf_mex_create("y", &c6_f_u, 3, 0U, 0U, 0U, 0), FALSE);
+  if (!chartInstance->c6_timeLastCycle_not_empty) {
+    sf_mex_assign(&c6_g_y, sf_mex_create("y", NULL, 0, 0U, 1U, 0U, 2, 0, 0),
+                  FALSE);
+  } else {
+    sf_mex_assign(&c6_g_y, sf_mex_create("y", &c6_f_u, 0, 0U, 0U, 0U, 0), FALSE);
+  }
+
   sf_mex_setcell(c6_y, 5, c6_g_y);
+  c6_f_hoistedGlobal = chartInstance->c6_is_active_c6_test;
+  c6_g_u = c6_f_hoistedGlobal;
+  c6_h_y = NULL;
+  sf_mex_assign(&c6_h_y, sf_mex_create("y", &c6_g_u, 3, 0U, 0U, 0U, 0), FALSE);
+  sf_mex_setcell(c6_y, 6, c6_h_y);
   sf_mex_assign(&c6_st, c6_y, FALSE);
   return c6_st;
 }
@@ -225,22 +248,24 @@ static void set_sim_state_c6_test(SFc6_testInstanceStruct *chartInstance, const
   c6_pos_ref_out = (real_T (*)[3])ssGetOutputPortSignal(chartInstance->S, 1);
   chartInstance->c6_doneDoubleBufferReInit = TRUE;
   c6_u = sf_mex_dup(c6_st);
-  *c6_heading_ref = c6_g_emlrt_marshallIn(chartInstance, sf_mex_dup
+  *c6_heading_ref = c6_i_emlrt_marshallIn(chartInstance, sf_mex_dup
     (sf_mex_getcell(c6_u, 0)), "heading_ref");
-  c6_i_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c6_u, 1)),
+  c6_k_emlrt_marshallIn(chartInstance, sf_mex_dup(sf_mex_getcell(c6_u, 1)),
                         "pos_ref_out", c6_dv0);
   for (c6_i1 = 0; c6_i1 < 3; c6_i1++) {
     (*c6_pos_ref_out)[c6_i1] = c6_dv0[c6_i1];
   }
 
-  chartInstance->c6_heading = c6_e_emlrt_marshallIn(chartInstance, sf_mex_dup
+  chartInstance->c6_heading = c6_g_emlrt_marshallIn(chartInstance, sf_mex_dup
     (sf_mex_getcell(c6_u, 2)), "heading");
-  chartInstance->c6_lastDesHeight = c6_emlrt_marshallIn(chartInstance,
+  chartInstance->c6_lastDesHeight = c6_c_emlrt_marshallIn(chartInstance,
     sf_mex_dup(sf_mex_getcell(c6_u, 3)), "lastDesHeight");
-  chartInstance->c6_timeLastCycle = c6_c_emlrt_marshallIn(chartInstance,
-    sf_mex_dup(sf_mex_getcell(c6_u, 4)), "timeLastCycle");
-  chartInstance->c6_is_active_c6_test = c6_l_emlrt_marshallIn(chartInstance,
-    sf_mex_dup(sf_mex_getcell(c6_u, 5)), "is_active_c6_test");
+  chartInstance->c6_reachedHeight = c6_emlrt_marshallIn(chartInstance,
+    sf_mex_dup(sf_mex_getcell(c6_u, 4)), "reachedHeight");
+  chartInstance->c6_timeLastCycle = c6_e_emlrt_marshallIn(chartInstance,
+    sf_mex_dup(sf_mex_getcell(c6_u, 5)), "timeLastCycle");
+  chartInstance->c6_is_active_c6_test = c6_n_emlrt_marshallIn(chartInstance,
+    sf_mex_dup(sf_mex_getcell(c6_u, 6)), "is_active_c6_test");
   sf_mex_destroy(&c6_u);
   c6_update_debugger_state_c6_test(chartInstance);
   sf_mex_destroy(&c6_st);
@@ -268,7 +293,7 @@ static void sf_c6_test(SFc6_testInstanceStruct *chartInstance)
   real_T c6_time;
   int32_T c6_i8;
   real_T c6_eta[6];
-  uint32_T c6_debug_family_var_map[14];
+  uint32_T c6_debug_family_var_map[15];
   real_T c6_timeStep;
   real_T c6_nargin = 6.0;
   real_T c6_nargout = 2.0;
@@ -342,29 +367,31 @@ static void sf_c6_test(SFc6_testInstanceStruct *chartInstance)
     c6_eta[c6_i8] = (*c6_b_eta)[c6_i8];
   }
 
-  _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 14U, 14U, c6_debug_family_names,
+  _SFD_SYMBOL_SCOPE_PUSH_EML(0U, 15U, 15U, c6_debug_family_names,
     c6_debug_family_var_map);
-  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_timeStep, 0U, c6_d_sf_marshallOut,
-    c6_d_sf_marshallIn);
-  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_nargin, 1U, c6_d_sf_marshallOut,
-    c6_d_sf_marshallIn);
-  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_nargout, 2U, c6_d_sf_marshallOut,
-    c6_d_sf_marshallIn);
-  _SFD_SYMBOL_SCOPE_ADD_EML(c6_measuredNodePos, 3U, c6_e_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML(&c6_measuredNodeHeading, 4U, c6_d_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML(&c6_inFrame, 5U, c6_g_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML(c6_pos_ref_in, 6U, c6_e_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML(&c6_time, 7U, c6_d_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML(c6_eta, 8U, c6_f_sf_marshallOut);
-  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(c6_pos_ref_out, 9U, c6_e_sf_marshallOut,
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_timeStep, 0U, c6_e_sf_marshallOut,
     c6_e_sf_marshallIn);
-  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_heading_ref, 10U, c6_d_sf_marshallOut,
-    c6_d_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_nargin, 1U, c6_e_sf_marshallOut,
+    c6_e_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_nargout, 2U, c6_e_sf_marshallOut,
+    c6_e_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML(c6_measuredNodePos, 3U, c6_f_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML(&c6_measuredNodeHeading, 4U, c6_e_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML(&c6_inFrame, 5U, c6_h_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML(c6_pos_ref_in, 6U, c6_f_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML(&c6_time, 7U, c6_e_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML(c6_eta, 8U, c6_g_sf_marshallOut);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(c6_pos_ref_out, 9U, c6_f_sf_marshallOut,
+    c6_f_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&c6_heading_ref, 10U, c6_e_sf_marshallOut,
+    c6_e_sf_marshallIn);
   _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&chartInstance->c6_heading, 11U,
-    c6_c_sf_marshallOut, c6_c_sf_marshallIn);
+    c6_d_sf_marshallOut, c6_d_sf_marshallIn);
   _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&chartInstance->c6_timeLastCycle, 12U,
-    c6_b_sf_marshallOut, c6_b_sf_marshallIn);
+    c6_c_sf_marshallOut, c6_c_sf_marshallIn);
   _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&chartInstance->c6_lastDesHeight, 13U,
+    c6_b_sf_marshallOut, c6_b_sf_marshallIn);
+  _SFD_SYMBOL_SCOPE_ADD_EML_IMPORTABLE(&chartInstance->c6_reachedHeight, 14U,
     c6_sf_marshallOut, c6_sf_marshallIn);
   CV_EML_FCN(0, 0);
   _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 4);
@@ -416,64 +443,77 @@ static void sf_c6_test(SFc6_testInstanceStruct *chartInstance)
     chartInstance->c6_lastDesHeight_not_empty = TRUE;
   }
 
-  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 38);
-  c6_d_hoistedGlobal = chartInstance->c6_lastDesHeight;
-  c6_b = c6_timeStep;
-  c6_y = c6_b;
-  c6_pos_ref_out[2] = c6_d_hoistedGlobal - c6_y;
-  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 39);
-  chartInstance->c6_lastDesHeight = c6_pos_ref_out[2];
+  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 35);
+  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 36);
+  if (CV_EML_IF(0, 1, 4, !chartInstance->c6_reachedHeight_not_empty)) {
+    _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 37);
+    chartInstance->c6_reachedHeight = 0.0;
+    chartInstance->c6_reachedHeight_not_empty = TRUE;
+  }
+
   _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 41);
-  if (CV_EML_IF(0, 1, 4, c6_pos_ref_out[2] < -4.0)) {
+  if (CV_EML_IF(0, 1, 5, chartInstance->c6_reachedHeight == 0.0)) {
     _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 42);
-    c6_pos_ref_out[2] = -4.0;
+    c6_d_hoistedGlobal = chartInstance->c6_lastDesHeight;
+    c6_b = c6_timeStep;
+    c6_y = c6_b;
+    c6_pos_ref_out[2] = c6_d_hoistedGlobal - c6_y;
     _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 43);
     chartInstance->c6_lastDesHeight = c6_pos_ref_out[2];
-  }
-
-  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 46);
-  c6_x = c6_mpower(chartInstance, c6_eta[0] - c6_measuredNodePos[0]) + c6_mpower
-    (chartInstance, c6_eta[1] - c6_measuredNodePos[1]);
-  c6_b_x = c6_x;
-  if (c6_b_x < 0.0) {
-    c6_eml_error(chartInstance);
-  }
-
-  c6_b_x = muDoubleScalarSqrt(c6_b_x);
-  guard1 = FALSE;
-  if (CV_EML_COND(0, 1, 0, c6_b_x < 0.05)) {
-    if (CV_EML_COND(0, 1, 1, (real_T)c6_inFrame == 1.0)) {
-      CV_EML_MCDC(0, 1, 0, TRUE);
-      CV_EML_IF(0, 1, 5, TRUE);
+    _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 45);
+    if (CV_EML_IF(0, 1, 6, c6_pos_ref_out[2] < -4.0)) {
+      _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 46);
+      c6_pos_ref_out[2] = -4.0;
       _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 47);
-      c6_e_hoistedGlobal = chartInstance->c6_lastDesHeight;
-      c6_b_b = c6_timeStep;
-      c6_b_y = 0.25 * c6_b_b;
-      c6_pos_ref_out[2] = c6_e_hoistedGlobal + c6_b_y;
+      chartInstance->c6_reachedHeight = 1.0;
       _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 48);
       chartInstance->c6_lastDesHeight = c6_pos_ref_out[2];
-      _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 49);
-      if (CV_EML_IF(0, 1, 6, c6_pos_ref_out[2] > -0.05)) {
-        _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 50);
-        c6_pos_ref_out[2] = -0.05;
-        _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 51);
+    }
+  } else {
+    _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 52);
+    c6_x = c6_mpower(chartInstance, c6_eta[0] - c6_measuredNodePos[0]) +
+      c6_mpower(chartInstance, c6_eta[1] - c6_measuredNodePos[1]);
+    c6_b_x = c6_x;
+    if (c6_b_x < 0.0) {
+      c6_eml_error(chartInstance);
+    }
+
+    c6_b_x = muDoubleScalarSqrt(c6_b_x);
+    guard1 = FALSE;
+    if (CV_EML_COND(0, 1, 0, c6_b_x < 0.05)) {
+      if (CV_EML_COND(0, 1, 1, (real_T)c6_inFrame == 1.0)) {
+        CV_EML_MCDC(0, 1, 0, TRUE);
+        CV_EML_IF(0, 1, 7, TRUE);
+        _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 53);
+        c6_e_hoistedGlobal = chartInstance->c6_lastDesHeight;
+        c6_b_b = c6_timeStep;
+        c6_b_y = 0.25 * c6_b_b;
+        c6_pos_ref_out[2] = c6_e_hoistedGlobal + c6_b_y;
+        _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 54);
         chartInstance->c6_lastDesHeight = c6_pos_ref_out[2];
+        _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 55);
+        if (CV_EML_IF(0, 1, 8, c6_pos_ref_out[2] > -0.05)) {
+          _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 56);
+          c6_pos_ref_out[2] = -0.05;
+          _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 57);
+          chartInstance->c6_lastDesHeight = c6_pos_ref_out[2];
+        }
+      } else {
+        guard1 = TRUE;
       }
     } else {
       guard1 = TRUE;
     }
-  } else {
-    guard1 = TRUE;
+
+    if (guard1 == TRUE) {
+      CV_EML_MCDC(0, 1, 0, FALSE);
+      CV_EML_IF(0, 1, 7, FALSE);
+      _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 61);
+      c6_pos_ref_out[2] = chartInstance->c6_lastDesHeight;
+    }
   }
 
-  if (guard1 == TRUE) {
-    CV_EML_MCDC(0, 1, 0, FALSE);
-    CV_EML_IF(0, 1, 5, FALSE);
-    _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, 55);
-    c6_pos_ref_out[2] = chartInstance->c6_lastDesHeight;
-  }
-
-  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, -55);
+  _SFD_EML_CALL(0U, chartInstance->c6_sfEvent, -61);
   _SFD_SYMBOL_SCOPE_POP();
   for (c6_i9 = 0; c6_i9 < 3; c6_i9++) {
     (*c6_b_pos_ref_out)[c6_i9] = c6_pos_ref_out[c6_i9];
@@ -508,7 +548,7 @@ static const mxArray *c6_sf_marshallOut(void *chartInstanceVoid, void *c6_inData
   c6_mxArrayOutData = NULL;
   c6_u = *(real_T *)c6_inData;
   c6_y = NULL;
-  if (!chartInstance->c6_lastDesHeight_not_empty) {
+  if (!chartInstance->c6_reachedHeight_not_empty) {
     sf_mex_assign(&c6_y, sf_mex_create("y", NULL, 0, 0U, 1U, 0U, 2, 0, 0), FALSE);
   } else {
     sf_mex_assign(&c6_y, sf_mex_create("y", &c6_u, 0, 0U, 0U, 0U, 0), FALSE);
@@ -519,15 +559,15 @@ static const mxArray *c6_sf_marshallOut(void *chartInstanceVoid, void *c6_inData
 }
 
 static real_T c6_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
-  mxArray *c6_b_lastDesHeight, const char_T *c6_identifier)
+  mxArray *c6_b_reachedHeight, const char_T *c6_identifier)
 {
   real_T c6_y;
   emlrtMsgIdentifier c6_thisId;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_b_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_lastDesHeight),
+  c6_y = c6_b_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_reachedHeight),
     &c6_thisId);
-  sf_mex_destroy(&c6_b_lastDesHeight);
+  sf_mex_destroy(&c6_b_reachedHeight);
   return c6_y;
 }
 
@@ -537,9 +577,9 @@ static real_T c6_b_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   real_T c6_y;
   real_T c6_d0;
   if (mxIsEmpty(c6_u)) {
-    chartInstance->c6_lastDesHeight_not_empty = FALSE;
+    chartInstance->c6_reachedHeight_not_empty = FALSE;
   } else {
-    chartInstance->c6_lastDesHeight_not_empty = TRUE;
+    chartInstance->c6_reachedHeight_not_empty = TRUE;
     sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d0, 1, 0, 0U, 0, 0U, 0);
     c6_y = c6_d0;
   }
@@ -549,6 +589,77 @@ static real_T c6_b_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
 }
 
 static void c6_sf_marshallIn(void *chartInstanceVoid, const mxArray
+  *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
+{
+  const mxArray *c6_b_reachedHeight;
+  const char_T *c6_identifier;
+  emlrtMsgIdentifier c6_thisId;
+  real_T c6_y;
+  SFc6_testInstanceStruct *chartInstance;
+  chartInstance = (SFc6_testInstanceStruct *)chartInstanceVoid;
+  c6_b_reachedHeight = sf_mex_dup(c6_mxArrayInData);
+  c6_identifier = c6_varName;
+  c6_thisId.fIdentifier = c6_identifier;
+  c6_thisId.fParent = NULL;
+  c6_y = c6_b_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_reachedHeight),
+    &c6_thisId);
+  sf_mex_destroy(&c6_b_reachedHeight);
+  *(real_T *)c6_outData = c6_y;
+  sf_mex_destroy(&c6_mxArrayInData);
+}
+
+static const mxArray *c6_b_sf_marshallOut(void *chartInstanceVoid, void
+  *c6_inData)
+{
+  const mxArray *c6_mxArrayOutData = NULL;
+  real_T c6_u;
+  const mxArray *c6_y = NULL;
+  SFc6_testInstanceStruct *chartInstance;
+  chartInstance = (SFc6_testInstanceStruct *)chartInstanceVoid;
+  c6_mxArrayOutData = NULL;
+  c6_u = *(real_T *)c6_inData;
+  c6_y = NULL;
+  if (!chartInstance->c6_lastDesHeight_not_empty) {
+    sf_mex_assign(&c6_y, sf_mex_create("y", NULL, 0, 0U, 1U, 0U, 2, 0, 0), FALSE);
+  } else {
+    sf_mex_assign(&c6_y, sf_mex_create("y", &c6_u, 0, 0U, 0U, 0U, 0), FALSE);
+  }
+
+  sf_mex_assign(&c6_mxArrayOutData, c6_y, FALSE);
+  return c6_mxArrayOutData;
+}
+
+static real_T c6_c_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+  const mxArray *c6_b_lastDesHeight, const char_T *c6_identifier)
+{
+  real_T c6_y;
+  emlrtMsgIdentifier c6_thisId;
+  c6_thisId.fIdentifier = c6_identifier;
+  c6_thisId.fParent = NULL;
+  c6_y = c6_d_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_lastDesHeight),
+    &c6_thisId);
+  sf_mex_destroy(&c6_b_lastDesHeight);
+  return c6_y;
+}
+
+static real_T c6_d_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+  const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId)
+{
+  real_T c6_y;
+  real_T c6_d1;
+  if (mxIsEmpty(c6_u)) {
+    chartInstance->c6_lastDesHeight_not_empty = FALSE;
+  } else {
+    chartInstance->c6_lastDesHeight_not_empty = TRUE;
+    sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d1, 1, 0, 0U, 0, 0U, 0);
+    c6_y = c6_d1;
+  }
+
+  sf_mex_destroy(&c6_u);
+  return c6_y;
+}
+
+static void c6_b_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
 {
   const mxArray *c6_b_lastDesHeight;
@@ -561,14 +672,14 @@ static void c6_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c6_identifier = c6_varName;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_b_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_lastDesHeight),
+  c6_y = c6_d_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_lastDesHeight),
     &c6_thisId);
   sf_mex_destroy(&c6_b_lastDesHeight);
   *(real_T *)c6_outData = c6_y;
   sf_mex_destroy(&c6_mxArrayInData);
 }
 
-static const mxArray *c6_b_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_c_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -589,37 +700,37 @@ static const mxArray *c6_b_sf_marshallOut(void *chartInstanceVoid, void
   return c6_mxArrayOutData;
 }
 
-static real_T c6_c_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static real_T c6_e_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_b_timeLastCycle, const char_T *c6_identifier)
 {
   real_T c6_y;
   emlrtMsgIdentifier c6_thisId;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_d_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_timeLastCycle),
+  c6_y = c6_f_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_timeLastCycle),
     &c6_thisId);
   sf_mex_destroy(&c6_b_timeLastCycle);
   return c6_y;
 }
 
-static real_T c6_d_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static real_T c6_f_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId)
 {
   real_T c6_y;
-  real_T c6_d1;
+  real_T c6_d2;
   if (mxIsEmpty(c6_u)) {
     chartInstance->c6_timeLastCycle_not_empty = FALSE;
   } else {
     chartInstance->c6_timeLastCycle_not_empty = TRUE;
-    sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d1, 1, 0, 0U, 0, 0U, 0);
-    c6_y = c6_d1;
+    sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d2, 1, 0, 0U, 0, 0U, 0);
+    c6_y = c6_d2;
   }
 
   sf_mex_destroy(&c6_u);
   return c6_y;
 }
 
-static void c6_b_sf_marshallIn(void *chartInstanceVoid, const mxArray
+static void c6_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
 {
   const mxArray *c6_b_timeLastCycle;
@@ -632,14 +743,14 @@ static void c6_b_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c6_identifier = c6_varName;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_d_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_timeLastCycle),
+  c6_y = c6_f_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_timeLastCycle),
     &c6_thisId);
   sf_mex_destroy(&c6_b_timeLastCycle);
   *(real_T *)c6_outData = c6_y;
   sf_mex_destroy(&c6_mxArrayInData);
 }
 
-static const mxArray *c6_c_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_d_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -660,37 +771,37 @@ static const mxArray *c6_c_sf_marshallOut(void *chartInstanceVoid, void
   return c6_mxArrayOutData;
 }
 
-static real_T c6_e_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static real_T c6_g_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_b_heading, const char_T *c6_identifier)
 {
   real_T c6_y;
   emlrtMsgIdentifier c6_thisId;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_f_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_heading),
+  c6_y = c6_h_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_heading),
     &c6_thisId);
   sf_mex_destroy(&c6_b_heading);
   return c6_y;
 }
 
-static real_T c6_f_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static real_T c6_h_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId)
 {
   real_T c6_y;
-  real_T c6_d2;
+  real_T c6_d3;
   if (mxIsEmpty(c6_u)) {
     chartInstance->c6_heading_not_empty = FALSE;
   } else {
     chartInstance->c6_heading_not_empty = TRUE;
-    sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d2, 1, 0, 0U, 0, 0U, 0);
-    c6_y = c6_d2;
+    sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d3, 1, 0, 0U, 0, 0U, 0);
+    c6_y = c6_d3;
   }
 
   sf_mex_destroy(&c6_u);
   return c6_y;
 }
 
-static void c6_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
+static void c6_d_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
 {
   const mxArray *c6_b_heading;
@@ -703,14 +814,14 @@ static void c6_c_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c6_identifier = c6_varName;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_f_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_heading),
+  c6_y = c6_h_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_heading),
     &c6_thisId);
   sf_mex_destroy(&c6_b_heading);
   *(real_T *)c6_outData = c6_y;
   sf_mex_destroy(&c6_mxArrayInData);
 }
 
-static const mxArray *c6_d_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_e_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -726,31 +837,31 @@ static const mxArray *c6_d_sf_marshallOut(void *chartInstanceVoid, void
   return c6_mxArrayOutData;
 }
 
-static real_T c6_g_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static real_T c6_i_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_heading_ref, const char_T *c6_identifier)
 {
   real_T c6_y;
   emlrtMsgIdentifier c6_thisId;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_h_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_heading_ref),
+  c6_y = c6_j_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_heading_ref),
     &c6_thisId);
   sf_mex_destroy(&c6_heading_ref);
   return c6_y;
 }
 
-static real_T c6_h_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static real_T c6_j_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId)
 {
   real_T c6_y;
-  real_T c6_d3;
-  sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d3, 1, 0, 0U, 0, 0U, 0);
-  c6_y = c6_d3;
+  real_T c6_d4;
+  sf_mex_import(c6_parentId, sf_mex_dup(c6_u), &c6_d4, 1, 0, 0U, 0, 0U, 0);
+  c6_y = c6_d4;
   sf_mex_destroy(&c6_u);
   return c6_y;
 }
 
-static void c6_d_sf_marshallIn(void *chartInstanceVoid, const mxArray
+static void c6_e_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
 {
   const mxArray *c6_heading_ref;
@@ -763,14 +874,14 @@ static void c6_d_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c6_identifier = c6_varName;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_h_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_heading_ref),
+  c6_y = c6_j_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_heading_ref),
     &c6_thisId);
   sf_mex_destroy(&c6_heading_ref);
   *(real_T *)c6_outData = c6_y;
   sf_mex_destroy(&c6_mxArrayInData);
 }
 
-static const mxArray *c6_e_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_f_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -796,18 +907,18 @@ static const mxArray *c6_e_sf_marshallOut(void *chartInstanceVoid, void
   return c6_mxArrayOutData;
 }
 
-static void c6_i_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
+static void c6_k_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
   mxArray *c6_pos_ref_out, const char_T *c6_identifier, real_T c6_y[3])
 {
   emlrtMsgIdentifier c6_thisId;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_j_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_pos_ref_out), &c6_thisId,
+  c6_l_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_pos_ref_out), &c6_thisId,
                         c6_y);
   sf_mex_destroy(&c6_pos_ref_out);
 }
 
-static void c6_j_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
+static void c6_l_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
   mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId, real_T c6_y[3])
 {
   real_T c6_dv1[3];
@@ -820,7 +931,7 @@ static void c6_j_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance, const
   sf_mex_destroy(&c6_u);
 }
 
-static void c6_e_sf_marshallIn(void *chartInstanceVoid, const mxArray
+static void c6_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
 {
   const mxArray *c6_pos_ref_out;
@@ -834,7 +945,7 @@ static void c6_e_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c6_identifier = c6_varName;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_j_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_pos_ref_out), &c6_thisId,
+  c6_l_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_pos_ref_out), &c6_thisId,
                         c6_y);
   sf_mex_destroy(&c6_pos_ref_out);
   for (c6_i13 = 0; c6_i13 < 3; c6_i13++) {
@@ -844,7 +955,7 @@ static void c6_e_sf_marshallIn(void *chartInstanceVoid, const mxArray
   sf_mex_destroy(&c6_mxArrayInData);
 }
 
-static const mxArray *c6_f_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_g_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -870,7 +981,7 @@ static const mxArray *c6_f_sf_marshallOut(void *chartInstanceVoid, void
   return c6_mxArrayOutData;
 }
 
-static const mxArray *c6_g_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_h_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -1097,7 +1208,7 @@ static void c6_eml_error(SFc6_testInstanceStruct *chartInstance)
     c6_y, 14, c6_b_y));
 }
 
-static const mxArray *c6_h_sf_marshallOut(void *chartInstanceVoid, void
+static const mxArray *c6_i_sf_marshallOut(void *chartInstanceVoid, void
   *c6_inData)
 {
   const mxArray *c6_mxArrayOutData = NULL;
@@ -1113,7 +1224,7 @@ static const mxArray *c6_h_sf_marshallOut(void *chartInstanceVoid, void
   return c6_mxArrayOutData;
 }
 
-static int32_T c6_k_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static int32_T c6_m_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId)
 {
   int32_T c6_y;
@@ -1124,7 +1235,7 @@ static int32_T c6_k_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   return c6_y;
 }
 
-static void c6_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
+static void c6_g_sf_marshallIn(void *chartInstanceVoid, const mxArray
   *c6_mxArrayInData, const char_T *c6_varName, void *c6_outData)
 {
   const mxArray *c6_b_sfEvent;
@@ -1137,27 +1248,27 @@ static void c6_f_sf_marshallIn(void *chartInstanceVoid, const mxArray
   c6_identifier = c6_varName;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_k_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_sfEvent),
+  c6_y = c6_m_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_sfEvent),
     &c6_thisId);
   sf_mex_destroy(&c6_b_sfEvent);
   *(int32_T *)c6_outData = c6_y;
   sf_mex_destroy(&c6_mxArrayInData);
 }
 
-static uint8_T c6_l_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static uint8_T c6_n_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_b_is_active_c6_test, const char_T *c6_identifier)
 {
   uint8_T c6_y;
   emlrtMsgIdentifier c6_thisId;
   c6_thisId.fIdentifier = c6_identifier;
   c6_thisId.fParent = NULL;
-  c6_y = c6_m_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_is_active_c6_test),
+  c6_y = c6_o_emlrt_marshallIn(chartInstance, sf_mex_dup(c6_b_is_active_c6_test),
     &c6_thisId);
   sf_mex_destroy(&c6_b_is_active_c6_test);
   return c6_y;
 }
 
-static uint8_T c6_m_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
+static uint8_T c6_o_emlrt_marshallIn(SFc6_testInstanceStruct *chartInstance,
   const mxArray *c6_u, const emlrtMsgIdentifier *c6_parentId)
 {
   uint8_T c6_y;
@@ -1195,10 +1306,10 @@ extern void utFree(void*);
 
 void sf_c6_test_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3147087219U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(939398617U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1893767587U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1198761792U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3051033080U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1208977282U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1666587898U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3072926582U);
 }
 
 mxArray *sf_c6_test_get_autoinheritance_info(void)
@@ -1210,7 +1321,7 @@ mxArray *sf_c6_test_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("60WwwfaXVyM79cfMFHwNnG");
+    mxArray *mxChecksum = mxCreateString("00rHlybFgkAVSjKI26E3pD");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1404,10 +1515,10 @@ static const mxArray *sf_get_sim_state_info_c6_test(void)
 
   mxArray *mxInfo = mxCreateStructMatrix(1, 1, 2, infoFields);
   const char *infoEncStr[] = {
-    "100 S1x6'type','srcId','name','auxInfo'{{M[1],M[8],T\"heading_ref\",},{M[1],M[5],T\"pos_ref_out\",},{M[4],M[0],T\"heading\",S'l','i','p'{{M1x2[133 140],M[0],}}},{M[4],M[0],T\"lastDesHeight\",S'l','i','p'{{M1x2[699 712],M[0],}}},{M[4],M[0],T\"timeLastCycle\",S'l','i','p'{{M1x2[557 570],M[0],}}},{M[8],M[0],T\"is_active_c6_test\",}}"
+    "100 S1x7'type','srcId','name','auxInfo'{{M[1],M[8],T\"heading_ref\",},{M[1],M[5],T\"pos_ref_out\",},{M[4],M[0],T\"heading\",S'l','i','p'{{M1x2[133 140],M[0],}}},{M[4],M[0],T\"lastDesHeight\",S'l','i','p'{{M1x2[699 712],M[0],}}},{M[4],M[0],T\"reachedHeight\",S'l','i','p'{{M1x2[781 794],M[0],}}},{M[4],M[0],T\"timeLastCycle\",S'l','i','p'{{M1x2[557 570],M[0],}}},{M[8],M[0],T\"is_active_c6_test\",}}"
   };
 
-  mxArray *mxVarInfo = sf_mex_decode_encoded_mx_struct_array(infoEncStr, 6, 10);
+  mxArray *mxVarInfo = sf_mex_decode_encoded_mx_struct_array(infoEncStr, 7, 10);
   mxArray *mxChecksum = mxCreateDoubleMatrix(1, 4, mxREAL);
   sf_c6_test_get_check_sum(&mxChecksum);
   mxSetField(mxInfo, 0, infoFields[0], mxChecksum);
@@ -1477,24 +1588,26 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
         _SFD_CV_INIT_TRANS(0,0,NULL,NULL,0,NULL);
 
         /* Initialization of MATLAB Function Model Coverage */
-        _SFD_CV_INIT_EML(0,1,1,7,0,0,0,0,0,2,1);
-        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,1446);
+        _SFD_CV_INIT_EML(0,1,1,9,0,0,0,0,0,2,1);
+        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,1571);
         _SFD_CV_INIT_EML_IF(0,1,0,143,162,-1,184);
         _SFD_CV_INIT_EML_IF(0,1,1,220,235,395,499);
         _SFD_CV_INIT_EML_IF(0,1,2,573,598,-1,627);
         _SFD_CV_INIT_EML_IF(0,1,3,715,740,-1,769);
-        _SFD_CV_INIT_EML_IF(0,1,4,931,953,-1,1031);
-        _SFD_CV_INIT_EML_IF(0,1,5,1043,1136,1367,1421);
-        _SFD_CV_INIT_EML_IF(0,1,6,1243,1268,-1,1361);
+        _SFD_CV_INIT_EML_IF(0,1,4,796,821,-1,848);
+        _SFD_CV_INIT_EML_IF(0,1,5,907,928,1164,1556);
+        _SFD_CV_INIT_EML_IF(0,1,6,1036,1058,-1,1163);
+        _SFD_CV_INIT_EML_IF(0,1,7,1174,1267,1498,1552);
+        _SFD_CV_INIT_EML_IF(0,1,8,1374,1399,-1,1492);
 
         {
-          static int condStart[] = { 1046, 1124 };
+          static int condStart[] = { 1177, 1255 };
 
-          static int condEnd[] = { 1120, 1136 };
+          static int condEnd[] = { 1251, 1267 };
 
           static int pfixExpr[] = { 0, 1, -3 };
 
-          _SFD_CV_INIT_EML_MCDC(0,1,0,1046,1136,2,0,&(condStart[0]),&(condEnd[0]),
+          _SFD_CV_INIT_EML_MCDC(0,1,0,1177,1267,2,0,&(condStart[0]),&(condEnd[0]),
                                 3,&(pfixExpr[0]));
         }
 
@@ -1511,39 +1624,39 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
           unsigned int dimVector[1];
           dimVector[0]= 3;
           _SFD_SET_DATA_COMPILED_PROPS(0,SF_DOUBLE,1,&(dimVector[0]),0,0,0,0.0,
-            1.0,0,0,(MexFcnForType)c6_e_sf_marshallOut,(MexInFcnForType)NULL);
+            1.0,0,0,(MexFcnForType)c6_f_sf_marshallOut,(MexInFcnForType)NULL);
         }
 
         {
           unsigned int dimVector[1];
           dimVector[0]= 3;
           _SFD_SET_DATA_COMPILED_PROPS(1,SF_DOUBLE,1,&(dimVector[0]),0,0,0,0.0,
-            1.0,0,0,(MexFcnForType)c6_e_sf_marshallOut,(MexInFcnForType)
-            c6_e_sf_marshallIn);
+            1.0,0,0,(MexFcnForType)c6_f_sf_marshallOut,(MexInFcnForType)
+            c6_f_sf_marshallIn);
         }
 
         _SFD_SET_DATA_COMPILED_PROPS(2,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
-          (MexFcnForType)c6_d_sf_marshallOut,(MexInFcnForType)NULL);
+          (MexFcnForType)c6_e_sf_marshallOut,(MexInFcnForType)NULL);
         _SFD_SET_DATA_COMPILED_PROPS(3,SF_UINT8,0,NULL,0,0,0,0.0,1.0,0,0,
-          (MexFcnForType)c6_g_sf_marshallOut,(MexInFcnForType)NULL);
+          (MexFcnForType)c6_h_sf_marshallOut,(MexInFcnForType)NULL);
         _SFD_SET_DATA_COMPILED_PROPS(4,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
-          (MexFcnForType)c6_d_sf_marshallOut,(MexInFcnForType)c6_d_sf_marshallIn);
+          (MexFcnForType)c6_e_sf_marshallOut,(MexInFcnForType)c6_e_sf_marshallIn);
 
         {
           unsigned int dimVector[1];
           dimVector[0]= 3;
           _SFD_SET_DATA_COMPILED_PROPS(5,SF_DOUBLE,1,&(dimVector[0]),0,0,0,0.0,
-            1.0,0,0,(MexFcnForType)c6_e_sf_marshallOut,(MexInFcnForType)NULL);
+            1.0,0,0,(MexFcnForType)c6_f_sf_marshallOut,(MexInFcnForType)NULL);
         }
 
         _SFD_SET_DATA_COMPILED_PROPS(6,SF_DOUBLE,0,NULL,0,0,0,0.0,1.0,0,0,
-          (MexFcnForType)c6_d_sf_marshallOut,(MexInFcnForType)NULL);
+          (MexFcnForType)c6_e_sf_marshallOut,(MexInFcnForType)NULL);
 
         {
           unsigned int dimVector[1];
           dimVector[0]= 6;
           _SFD_SET_DATA_COMPILED_PROPS(7,SF_DOUBLE,1,&(dimVector[0]),0,0,0,0.0,
-            1.0,0,0,(MexFcnForType)c6_f_sf_marshallOut,(MexInFcnForType)NULL);
+            1.0,0,0,(MexFcnForType)c6_g_sf_marshallOut,(MexInFcnForType)NULL);
         }
 
         {
@@ -1587,7 +1700,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "2tEPbsATOCzAjo9jGa4ZMC";
+  return "MCFCyUQDm7MywdsGaRCbl";
 }
 
 static void sf_opaque_initialize_c6_test(void *chartInstanceVar)
@@ -1756,10 +1869,10 @@ static void mdlSetWorkWidths_c6_test(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(3971355930U));
-  ssSetChecksum1(S,(3777773124U));
-  ssSetChecksum2(S,(3615501701U));
-  ssSetChecksum3(S,(377475609U));
+  ssSetChecksum0(S,(2129912679U));
+  ssSetChecksum1(S,(2078334746U));
+  ssSetChecksum2(S,(4139688685U));
+  ssSetChecksum3(S,(961163312U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,1);

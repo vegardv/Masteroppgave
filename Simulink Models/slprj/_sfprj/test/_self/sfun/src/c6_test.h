@@ -41,6 +41,8 @@ typedef struct {
   boolean_T c6_timeLastCycle_not_empty;
   real_T c6_lastDesHeight;
   boolean_T c6_lastDesHeight_not_empty;
+  real_T c6_reachedHeight;
+  boolean_T c6_reachedHeight_not_empty;
 } SFc6_testInstanceStruct;
 
 #endif                                 /*typedef_SFc6_testInstanceStruct*/

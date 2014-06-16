@@ -62,7 +62,17 @@ Equation (\ref{newton}) can be transformed into a forced mass-spring-damper syst
 \ddot{\boldsymbol{\eta}} + \boldsymbol{K}_d\dot{\boldsymbol{\eta}} + \boldsymbol{K}_p\boldsymbol{\eta} &=& \boldsymbol{K}_p \boldsymbol{\eta_r}
 \label{res}
 \end{eqnarray}
-Proportional and derivational controller gains can be chosen $\boldsymbol{K}_p = \omega_0^2\boldsymbol{I}_{2x2}$ and $\boldsymbol{K}_d = 2\xi\omega_0\boldsymbol{I}_{2x2}$ according to the demands of the system.
+Proportional and derivational controller gains can be chosen $\boldsymbol{K}_p = \omega_0^2\boldsymbol{I}_{2x2}$ and $\boldsymbol{K}_d = 2\xi\omega_0\boldsymbol{I}_{2x2}$ according to the demands of the system.\\
+\newline
+Some early stage testing revealed the need for integral action in the controller. The testing was conducted inside so wind was not the issue, but a constant deviation was present due to inaccuracies in the sensors and low level controllers of the APM. The integral term is according to equation (\ref{int}).
+\begin{eqnarray}
+\boldsymbol{u}_i =  \boldsymbol{B}^{-1}\boldsymbol{K}_i\int_0^t(\boldsymbol{\eta}_r - \boldsymbol{\eta})
+\label{int}
+\end{eqnarray}
+The augmented controller then becomes
+\begin{eqnarray}
+\boldsymbol{u} = \boldsymbol{B}^{-1}(-\boldsymbol{K}_d\dot{\boldsymbol{\eta}} - \boldsymbol{K}_p\boldsymbol{\eta} + \boldsymbol{K}_p\boldsymbol{\eta}_r + \boldsymbol{K}_i\int_0^t(\boldsymbol{\eta}_r - \boldsymbol{\eta}))
+\end{eqnarray}
 \subsection{Implementation}
 Some practical issues arise in the implementation of the controller in equation (\ref{u}). These issues are related to the size of the thrust (T), the roll and pitch angles and choosing controller gains.\\
 \newline

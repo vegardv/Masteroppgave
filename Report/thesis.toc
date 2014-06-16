@@ -57,30 +57,36 @@
 \contentsline {subsection}{\numberline {5.1.1}Mathematical Description}{31}{subsection.5.1.1}
 \contentsline {subsection}{\numberline {5.1.2}Implementation}{32}{subsection.5.1.2}
 \contentsline {section}{\numberline {5.2}Software Implementation}{33}{section.5.2}
-\contentsline {chapter}{\numberline {6}Simulation of the System}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}Mathematical Model of the Hexacopter}{35}{section.6.1}
-\contentsline {section}{\numberline {6.2}Simulation of Low Level Controllers and Thrust Allocation in the APM}{36}{section.6.2}
-\contentsline {section}{\numberline {6.3}Simulation of the Camera Algorithm}{37}{section.6.3}
-\contentsline {section}{\numberline {6.4}Simulink Model}{37}{section.6.4}
-\contentsline {section}{\numberline {6.5}Test of Controller}{38}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Simulation Without Disturbances}{39}{subsection.6.5.1}
-\contentsline {subsubsection}{Results}{39}{section*.27}
-\contentsline {subsubsection}{Discussion}{40}{section*.28}
-\contentsline {subsection}{\numberline {6.5.2}Simulation Without Constant Disturbances}{40}{subsection.6.5.2}
-\contentsline {subsubsection}{Results}{40}{section*.29}
-\contentsline {subsubsection}{Discussion}{41}{section*.30}
-\contentsline {subsection}{\numberline {6.5.3}Simulation With Random Disturbances}{41}{subsection.6.5.3}
-\contentsline {subsubsection}{Results}{41}{section*.31}
-\contentsline {subsubsection}{Discussion}{42}{section*.32}
-\contentsline {chapter}{\numberline {7}Software In The Loop Testing}{43}{chapter.7}
-\contentsline {section}{\numberline {7.1}SITL-Setup}{43}{section.7.1}
-\contentsline {section}{\numberline {7.2}Some test 1}{45}{section.7.2}
-\contentsline {section}{\numberline {7.3}Some test 2}{45}{section.7.3}
-\contentsline {section}{\numberline {7.4}Results}{45}{section.7.4}
-\contentsline {chapter}{\numberline {8}Testing and Results}{47}{chapter.8}
-\contentsline {section}{\numberline {8.1}Node Tracking}{47}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Result of Test}{47}{subsection.8.1.1}
-\contentsline {chapter}{\numberline {9}Discussion}{49}{chapter.9}
-\contentsline {chapter}{\numberline {10}Conclusion}{51}{chapter.10}
-\contentsline {chapter}{Bibliography}{52}{chapter.10}
-\contentsline {chapter}{Bibliography}{53}{chapter*.39}
+\contentsline {chapter}{\numberline {6}Simulation of the System}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Mathematical Model of the Hexacopter}{37}{section.6.1}
+\contentsline {section}{\numberline {6.2}Simulation of Low Level Controllers and Thrust Allocation in the APM}{38}{section.6.2}
+\contentsline {section}{\numberline {6.3}Simulation of the Camera Algorithm}{39}{section.6.3}
+\contentsline {section}{\numberline {6.4}Simulink Model}{39}{section.6.4}
+\contentsline {section}{\numberline {6.5}Test of Controller}{40}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Simulation Without Disturbances}{40}{subsection.6.5.1}
+\contentsline {subsubsection}{Results}{40}{section*.27}
+\contentsline {subsubsection}{Discussion}{42}{section*.28}
+\contentsline {subsection}{\numberline {6.5.2}Simulation With Constant Disturbances}{42}{subsection.6.5.2}
+\contentsline {subsubsection}{Results}{42}{section*.29}
+\contentsline {subsubsection}{Discussion}{44}{section*.30}
+\contentsline {subsection}{\numberline {6.5.3}Simulation With Varying Disturbances}{44}{subsection.6.5.3}
+\contentsline {subsubsection}{Results}{44}{section*.31}
+\contentsline {subsubsection}{Discussion}{45}{section*.32}
+\contentsline {subsection}{\numberline {6.5.4}Simulation With Constant Disturbances on the Hexacopter and Disturbances Affecting the Sensor Node}{45}{subsection.6.5.4}
+\contentsline {subsubsection}{Results}{45}{section*.33}
+\contentsline {subsubsection}{Discussion}{47}{section*.34}
+\contentsline {chapter}{\numberline {7}Software In The Loop Testing}{49}{chapter.7}
+\contentsline {section}{\numberline {7.1}SITL-Setup}{49}{section.7.1}
+\contentsline {section}{\numberline {7.2}Pickup Test Without Disturbances}{51}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Results}{51}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Discussion}{53}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Pickup Test With Disturbances}{53}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Results}{53}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Discussion}{55}{subsection.7.3.2}
+\contentsline {chapter}{\numberline {8}Testing and Results}{57}{chapter.8}
+\contentsline {section}{\numberline {8.1}Node Tracking}{57}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Result of Test}{57}{subsection.8.1.1}
+\contentsline {chapter}{\numberline {9}Discussion}{59}{chapter.9}
+\contentsline {chapter}{\numberline {10}Conclusion}{61}{chapter.10}
+\contentsline {chapter}{Bibliography}{62}{chapter.10}
+\contentsline {chapter}{Bibliography}{63}{chapter*.41}

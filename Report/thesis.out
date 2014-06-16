@@ -49,17 +49,21 @@
 \BOOKMARK [1][-]{section.6.4}{Simulink Model}{chapter.6}% 49
 \BOOKMARK [1][-]{section.6.5}{Test of Controller}{chapter.6}% 50
 \BOOKMARK [2][-]{subsection.6.5.1}{Simulation Without Disturbances}{section.6.5}% 51
-\BOOKMARK [2][-]{subsection.6.5.2}{Simulation Without Constant Disturbances}{section.6.5}% 52
-\BOOKMARK [2][-]{subsection.6.5.3}{Simulation With Random Disturbances}{section.6.5}% 53
-\BOOKMARK [0][-]{chapter.7}{Software In The Loop Testing}{}% 54
-\BOOKMARK [1][-]{section.7.1}{SITL-Setup}{chapter.7}% 55
-\BOOKMARK [1][-]{section.7.2}{Some test 1}{chapter.7}% 56
-\BOOKMARK [1][-]{section.7.3}{Some test 2}{chapter.7}% 57
-\BOOKMARK [1][-]{section.7.4}{Results}{chapter.7}% 58
-\BOOKMARK [0][-]{chapter.8}{Testing and Results}{}% 59
-\BOOKMARK [1][-]{section.8.1}{Node Tracking}{chapter.8}% 60
-\BOOKMARK [2][-]{subsection.8.1.1}{Result of Test}{section.8.1}% 61
-\BOOKMARK [0][-]{chapter.9}{Discussion}{}% 62
-\BOOKMARK [0][-]{chapter.10}{Conclusion}{}% 63
-\BOOKMARK [0][-]{chapter.10}{Bibliography}{}% 64
-\BOOKMARK [0][-]{chapter*.39}{Bibliography}{}% 65
+\BOOKMARK [2][-]{subsection.6.5.2}{Simulation With Constant Disturbances}{section.6.5}% 52
+\BOOKMARK [2][-]{subsection.6.5.3}{Simulation With Varying Disturbances}{section.6.5}% 53
+\BOOKMARK [2][-]{subsection.6.5.4}{Simulation With Constant Disturbances on the Hexacopter and Disturbances Affecting the Sensor Node}{section.6.5}% 54
+\BOOKMARK [0][-]{chapter.7}{Software In The Loop Testing}{}% 55
+\BOOKMARK [1][-]{section.7.1}{SITL-Setup}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.2}{Pickup Test Without Disturbances}{chapter.7}% 57
+\BOOKMARK [2][-]{subsection.7.2.1}{Results}{section.7.2}% 58
+\BOOKMARK [2][-]{subsection.7.2.2}{Discussion}{section.7.2}% 59
+\BOOKMARK [1][-]{section.7.3}{Pickup Test With Disturbances}{chapter.7}% 60
+\BOOKMARK [2][-]{subsection.7.3.1}{Results}{section.7.3}% 61
+\BOOKMARK [2][-]{subsection.7.3.2}{Discussion}{section.7.3}% 62
+\BOOKMARK [0][-]{chapter.8}{Testing and Results}{}% 63
+\BOOKMARK [1][-]{section.8.1}{Node Tracking}{chapter.8}% 64
+\BOOKMARK [2][-]{subsection.8.1.1}{Result of Test}{section.8.1}% 65
+\BOOKMARK [0][-]{chapter.9}{Discussion}{}% 66
+\BOOKMARK [0][-]{chapter.10}{Conclusion}{}% 67
+\BOOKMARK [0][-]{chapter.10}{Bibliography}{}% 68
+\BOOKMARK [0][-]{chapter*.41}{Bibliography}{}% 69

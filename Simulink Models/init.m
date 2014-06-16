@@ -4,16 +4,6 @@ clf;
 close all;
 clear;
 
-% % MODEL
-% % Parameters
-% m = 0.468;
-% I = diag([4.856e-3,4.856e-3,8.801e-3]);%diag([4.856e-3, 4.856e-3, 8.801e-3]);
-% g = 9.81;
-% b = 1.140e-7;
-% k = 2.980e-6;
-% l = 0.225;
-% time = 10;
-
 % MODEL
 % Parameters
 m = 3;
@@ -22,7 +12,7 @@ g = 9.81;
 b = 0.1;
 k = 3;
 l = 0.25;
-time = 50;
+time = 400;
 
 
 % CONTROLLER
@@ -50,7 +40,6 @@ nodePosition = [0.5,0.5,0]';
 
 % Disturbance
 wind = [0.5,0]';
-windDir = 0;
 
 % REFERENCE VALUES
 psi_ref = 0;
@@ -63,84 +52,104 @@ sim('test');
 % Plot pos
 figure(1)
 subplot(3,1,1)
-plot(UAVPos.Time, UAVPos.Data(1:end, 1), UAVPos.Time, pos_ref.Data(1:end, 1));
+plot(UAVPos.Time, UAVPos.Data(1:end, 1), 'b', UAVPos.Time, pos_ref.Data(1:end, 1), 'r');
 ylabel('N [m]');
 legend('Position', 'Reference')
+%ylim([-0.2,0.6]);
+grid on
 
 subplot(3,1,2)
-plot(UAVPos.Time, UAVPos.Data(1:end, 2), UAVPos.Time, pos_ref.Data(1:end, 2));
+plot(UAVPos.Time, UAVPos.Data(1:end, 2), 'b', UAVPos.Time, pos_ref.Data(1:end, 2), 'r');
 ylabel('E [m]');
-
+grid on
 subplot(3,1,3)
-plot(UAVPos.Time, UAVPos.Data(1:end, 3), UAVPos.Time, D_ref.Data(1:end, 1));
+plot(UAVPos.Time, UAVPos.Data(1:end, 3), 'b', UAVPos.Time, D_ref.Data(1:end, 1), 'r');
 xlabel('time [s]');
 ylabel('D [m]');
-saveas(1, 'C:\Users\vegardvo\Documents\GitHub\Masteroppgave\Report\fig\plots\simulation\positionNoDisturbance.eps', 'eps2c')
+grid on
+%saveas(1, 'C:\Users\vegardvo\Dropbox\Masteroppgave\Report\fig\plots\simulation\positionVarDisturbance2.eps', 'eps2c')
+
 
 % Plot attitude
 figure(2)
 subplot(3,1,1)
-plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 1), UAVPos.Time, Theta_ref.Data(1:end, 1));
+plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 1), 'b', UAVPos.Time, Theta_ref.Data(1:end, 1), 'r');
 ylabel('\phi [rad]');
-title('Attitude of UAV');
 legend('Attitude', 'Reference')
+grid on
 
 subplot(3,1,2)
-plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 2), UAVPos.Time, Theta_ref.Data(1:end, 2));
+plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 2), 'b', UAVPos.Time, Theta_ref.Data(1:end, 2), 'r');
 ylabel('\theta [rad]');
+grid on
 
 subplot(3,1,3)
-plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 3), UAVPos.Time, Theta_ref.Data(1:end, 3));
+plot(UAVAttitude.Time, UAVAttitude.Data(1:end, 3),'b', UAVPos.Time, Theta_ref.Data(1:end, 3), 'r');
+grid on
 xlabel('time [s]');
 ylabel('\psi [rad]');
-
-% Plot ned XY
- figure(3)
- plot(UAVPos.Data(1:end,2), UAVPos.Data(1:end,1));
+%saveas(2, 'C:\Users\vegardvo\Dropbox\Masteroppgave\Report\fig\plots\simulation\AttNoDisturbance2.eps', 'eps2c')
 
 % Plot u
 figure(4)
 subplot(2,2,1)
 plot(u.Time, u.Data(1:end, 1));
-
+xlabel('time [s]');
+ylabel('T [N]')
+grid on
 subplot(2,2,2)
 plot(UAVAttitude.Time, u.Data(1:end, 2));
-
+xlabel('time [s]');
+ylabel('\tau_\phi [Nm]');
+grid on
 subplot(2,2,3)
 plot(UAVAttitude.Time, u.Data(1:end, 3));
-title('u')
-
+xlabel('time [s]');
+ylabel('\tau_\theta [Nm]');
+grid on
 subplot(2,2,4)
 plot(UAVAttitude.Time, u.Data(1:end, 4));
+xlabel('time [s]');
+ylabel('\tau_\psi [Nm]');
+grid on
+%saveas(4, 'C:\Users\vegardvo\Documents\GitHub\Masteroppgave\Report\fig\plots\simulation\uNodeDisturbance.eps', 'eps2c')
 
 % Plot omega
 figure(5)
 subplot(3,2,1)
 plot(u.Time, omega.Data(1:end, 1));
-
+xlabel('time [s]');
+ylabel('\omega_1 [rad/s]');
+grid on
 subplot(3,2,2)
 plot(UAVAttitude.Time, omega.Data(1:end, 2));
-
+xlabel('time [s]');
+ylabel('\omega_2 [rad/s]');
+grid on
 subplot(3,2,3)
 plot(UAVAttitude.Time, omega.Data(1:end, 3));
-title('omega')
-
+xlabel('time [s]');
+ylabel('\omega_3 [rad/s]');
+grid on
 subplot(3,2,4)
 plot(UAVAttitude.Time, omega.Data(1:end, 4));
-
+xlabel('time [s]');
+ylabel('\omega_4 [rad/s]');
+grid on
 subplot(3,2,5)
 plot(UAVAttitude.Time, omega.Data(1:end, 5));
-title('omega')
-
+xlabel('time [s]');
+ylabel('\omega_5 [rad/s]');
+grid on
 subplot(3,2,6)
 plot(UAVAttitude.Time, omega.Data(1:end, 6));
+xlabel('time [s]');
+ylabel('\omega_6 [rad/s]');
+grid on
+%saveas(5, 'C:\Users\vegardvo\Documents\GitHub\Masteroppgave\Report\fig\plots\simulation\omegaNodeDisturbance.eps', 'eps2c')
+
 
 figure(6)
-pathPlotterNode(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),  cornersX.Data(:,:), cornersY.Data(:,:), UAVPos.Time(2), 10, inframe.Data(:), nodePosition);
-saveas(6, 'C:\Users\vegardvo\Documents\GitHub\Masteroppgave\Report\fig\plots\simulation\positionFrameNoDisturbance.eps', 'eps2c')
-
-%pathPlotter(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80, 0, time, 0,0);
-%pathPlotter3d(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),UAVPos.Data(1:end,3), UAVAttitude.Data(1:end,3), UAVPos.Time(2), 80);
-
-figure(7)
-plot(inframe.Time, inframe.Data);
+pathPlotterNode(UAVPos.Data(1:end,1), UAVPos.Data(1:end,2),  cornersX.Data(:,:), cornersY.Data(:,:), UAVPos.Time(2), 70, inframe.Data(:), nodePos.Data(:, 1:2));
+grid on
+%saveas(6, 'C:\Users\vegardvo\Dropbox\Masteroppgave\Report\fig\plots\simulation\positionFrameVarDisturbance2.eps', 'eps2c')

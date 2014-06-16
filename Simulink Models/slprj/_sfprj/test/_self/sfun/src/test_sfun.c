@@ -162,10 +162,10 @@ unsigned int sf_test_process_check_sum_call( int nlhs, mxArray * plhs[], int
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2329191759U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1095148517U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3709684459U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3483824623U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3995422303U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1945943519U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3770262674U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(557120817U);
   }
 
   return 1;
@@ -215,7 +215,7 @@ unsigned int sf_test_autoinheritance_info( int nlhs, mxArray * plhs[], int nrhs,
 
      case 2:
       {
-        if (strcmp(aiChksum, "JNEdJMP8LPuP1mhFamrCWH") == 0) {
+        if (strcmp(aiChksum, "ekuVwoOBRA36Fu8HlxuESE") == 0) {
           extern mxArray *sf_c2_test_get_autoinheritance_info(void);
           plhs[0] = sf_c2_test_get_autoinheritance_info();
           break;
@@ -263,7 +263,7 @@ unsigned int sf_test_autoinheritance_info( int nlhs, mxArray * plhs[], int nrhs,
 
      case 6:
       {
-        if (strcmp(aiChksum, "60WwwfaXVyM79cfMFHwNnG") == 0) {
+        if (strcmp(aiChksum, "00rHlybFgkAVSjKI26E3pD") == 0) {
           extern mxArray *sf_c6_test_get_autoinheritance_info(void);
           plhs[0] = sf_c6_test_get_autoinheritance_info();
           break;
@@ -414,7 +414,7 @@ unsigned int sf_test_third_party_uses_info( int nlhs, mxArray * plhs[], int nrhs
 
      case 2:
       {
-        if (strcmp(tpChksum, "oA5wojXtBtQH0p1JJKjStD") == 0) {
+        if (strcmp(tpChksum, "LAx1U721cfbCtwjcXVoDeB") == 0) {
           extern mxArray *sf_c2_test_third_party_uses_info(void);
           plhs[0] = sf_c2_test_third_party_uses_info();
           break;
@@ -450,7 +450,7 @@ unsigned int sf_test_third_party_uses_info( int nlhs, mxArray * plhs[], int nrhs
 
      case 6:
       {
-        if (strcmp(tpChksum, "2tEPbsATOCzAjo9jGa4ZMC") == 0) {
+        if (strcmp(tpChksum, "MCFCyUQDm7MywdsGaRCbl") == 0) {
           extern mxArray *sf_c6_test_third_party_uses_info(void);
           plhs[0] = sf_c6_test_third_party_uses_info();
           break;

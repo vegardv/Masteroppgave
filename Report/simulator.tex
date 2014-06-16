@@ -82,41 +82,80 @@ All the components for the simulator explained abov,e in addition to a PandaBoar
 \label{simulink}
 \end{figure}
 \section{Test of Controller}
-The main scenario simulated is as close to the lab tests that will be conducted as possible. As the main challenge of the hexacopter controller is the pickup phase, the simulation will focus on this phase. In each of the simulations the hexacopter ramps up from a ground start to a height of 1.5 m. The sensor node is assumed to be lying 0.5 m North and 0.5 m East of the starting point. As the  hexacopter is flying the simulated camera will give measurements of the position of the sensor node, but only if the sensor node would have been in the camera frame. If the camera is unable to spot the sensor node, the position reference used for the controller will be the current position.\\
+The main scenario simulated is as close to the lab tests that will be conducted as possible. As the main challenge of the hexacopter controller is the pickup phase, the simulation will focus on this phase. In each of the simulations the hexacopter ramps up from a ground start to a height of 4 m. The sensor node is assumed to be lying 0.5 m North and 0.5 m East of the starting point. As the  hexacopter is flying the simulated camera will give measurements of the position of the sensor node, but only if the sensor node would have been in the camera frame. If the camera is unable to spot the sensor node, the position reference used for the controller will be the current position. The hexacopter will also try to maintain the same heading as the sensor node. If the sensor node is in the camera frame, the reference heading for the hexacopter will be updated, if the view of the sensor node is lost, the reference will be the last measured node heading\\
 \newline
-Three scenarios will be simulated
+Three scenarios will be simulated, first a simulation with no disturbances, then a simulation with constant disturbance and lastly a simulation with varying disturbances.
 \subsection{Simulation Without Disturbances}
+The scenario was first simulated using the proposed controller from equation (\ref{u}) without any disturbances present.
 \subsubsection{Results}
+The North-East-Down position of the sensor node is plotted in Figure \ref{posNoDisturbance}. It can be seen from the figure how the reference position is updated when the camera spots the sensor node. And one should also note that the hexacopter ramps down all the way to the sensor node without loosing sight of the sensor node. 
 \begin{figure}[H]
 \centering
-\includegraphics[width = 17cm]{fig/plots/simulation/positionNoDisturbance.eps}
-\caption{Result}
+\includegraphics[width = 12cm]{fig/plots/simulation/positionNoDisturbance.eps}
+\caption{North-East-Down position of the hexacopter}
+\label{posNoDisturbance}
+\end{figure}
+\noindent
+Figure \ref{posFrameNoDisturbance} shows the the North-East position of the hexacopter and the sensor node. It also shows the camera frame and whether the node is spotted by the camera or not. It can also be seen from this plot how the hexacopter yaws to keep the same heading as the sensor node (this can be seen even better from attitude plots shown in  Appendix A). 
+\begin{figure}[H]
+\centering
+\includegraphics[width = 12cm]{fig/plots/simulation/positionFrameNoDisturbance.eps}
+\caption{North-East-Down position of the hexacopter, sensor node and camera frame}
+\label{posFrameNoDisturbance}
 \end{figure}
 \subsubsection{Discussion}
-\subsection{Simulation Without Constant Disturbances}
+The hexacopter is able to lower itself down on the exact spot of the sensor node without loosing sight of the sensor node. This is very promising results, although some early tests in the lab showed that the controller used in this simulation would give some stationary deviations. The lab tests were conducted inside so wind played no part in this error. The error is probably due to unbalances of the hexacopter and inaccuracies of the low level controllers of the APM. Hence integral action was added to the controller. A simulation with constant disturbance and integral action follows.
+\subsection{Simulation With Constant Disturbances}
+The disturbance added could for instance represent a wind affecting the hexacopter with a force of 0.5 N in North-direction.
 \subsubsection{Results}
+As can be seen from Figure \ref{posFrameDisturbance} and Figure \ref{posFrameDisturbance} the hexacopter overshoots the reference position. The controller is able to cancel out the disturbance and make the hexacopter descend upon the sensor node.
 \begin{figure}[H]
 \centering
-\includegraphics[width = 17cm]{fig/plots/simulation/positionNoDisturbance.eps}
-\caption{Result}
+\includegraphics[width = 12cm]{fig/plots/simulation/positionDisturbance.eps}
+\caption{North-East-Down position of the hexacopter}
+\label{posDisturbance}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width = 12cm]{fig/plots/simulation/positionFrameDisturbance.eps}
+\caption{North-East-Down position of the hexacopter, sensor node and camera frame}
+\label{posFrameDisturbance}
 \end{figure}
 \subsubsection{Discussion}
-\subsection{Simulation With Random Disturbances}
+The overshoot of the position reference is due to the I-term of the controller and is quite natural due to the step in reference position. The fact that the disturbances is working in North-direction will also lead to an overshoot in North-direction, due to the added forces in that direction. The controller is able to correct for the disturbance and descend upon the sensor node, which is very good. 
+\subsection{Simulation With Varying Disturbances}
+The controller is tested in simulations where the disturbances are varying in both North and East-direction using integrated band limited white noise where the integral is limited by $\pm$ 1 N in both directions. The magnitude and direction of the disturbance is plotted in the appendix.
 \subsubsection{Results}
+The hexacopter stays approximately straight above the sensor node, and is able to lower itself a bit down towards the sensor node before it looses the sight of the node and drifts away. Both these observations are easily seen in Figures \ref{posVarDisturbance} and \ref{posFrameVarDisturbance}.
 \begin{figure}[H]
 \centering
-\includegraphics[width = 17cm]{fig/plots/simulation/positionNoDisturbance.eps}
-\caption{Result}
+\includegraphics[width = 12cm]{fig/plots/simulation/positionVarDisturbance.eps}
+\caption{North-East-Down position of the hexacopter}
+\label{posVarDisturbance}
 \end{figure}
 \begin{figure}[H]
 \centering
-\subfigure[Original image]{
-\includegraphics[width = 7cm]{fig/plots/simulation/positionNoDisturbance.eps}
-}
-\centering
-\subfigure[HSV image]{
-\includegraphics[width = 7cm]{fig/plots/simulation/positionFrameNoDisturbance.eps}
-}
-\caption{Results}
+\includegraphics[width = 12cm]{fig/plots/simulation/positionFrameVarDisturbance.eps}
+\caption{North-East-Down position of the hexacopter, sensor node and camera frame}
+\label{posFrameVarDisturbance}
 \end{figure}
 \subsubsection{Discussion}
+The results show that the controller is able to handle some random disturbances but sooner or later these disturbances will lead to problems where the camera will loose sight of the sensor node and then drift off. This will make pick up in such conditions impossible.
+\subsection{Simulation With Constant Disturbances on the Hexacopter and Disturbances Affecting the Sensor Node}
+A more realistic simulation is to simulate the system with constant disturbance, e.g. due to wind or inaccuracies in the APM. And let the sensor node be affected by some varying noise, which makes it change heading and position. The noise is modelled as random walk.
+\subsubsection{Results}
+As seen from Figures \ref{posNodeDisturbance} and \ref{posFrameNodeDisturbance} the hexacopter tracks both position and heading of the sensor node, and is actually able to get down to 5 cm above the sensor node before loosing sight of it and drifting off.
+\begin{figure}[H]
+\centering
+\includegraphics[width = 12cm]{fig/plots/simulation/positionNodeDisturbance.eps}
+\caption{North-East-Down position of the hexacopter}
+\label{posNodeDisturbance}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width = 12cm]{fig/plots/simulation/positionFrameNodeDisturbance.eps}
+\caption{North-East-Down position of the hexacopter, sensor node and camera frame} 
+\label{posFrameNodeDisturbance}
+\end{figure}
+\subsubsection{Discussion}
+The hexacopters abilities to track the sensor nodes position and heading is quite promising. The main issue that is revealed is the need for some way to get back to the previous position where the sensor node was spotted last. The simulations have also shown that this setup is not able to handle rough weather conditions, meaning that operation should be limited to days with only small waves and little wind.

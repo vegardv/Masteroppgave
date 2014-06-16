@@ -2,31 +2,28 @@
  * PWMDriver.c
  *
  * Created: 07.04.2014 13:08:07
- *  Author: vegardvo
+ *  Author: Vegard Voldsund
  */ 
 
 
 #include <avr/io.h>
 
-#define PWMPIN PB0 // PWM out on pin 0
-#define EN PB1 // Enable input on pin 1
-#define POS PB2	   // Position input on pin 2
+#define PWMPIN	PB0		// PWM out on pin 0
+#define EN		PB1		// Enable input on pin 1
+#define POS		PB2		// Position input on pin 2
 
 int main(void)
 {
 		// Set pin directions
 		DDRB &= ~(1 << EN);
 		DDRB &= ~(1 << POS);
-		//DDRB |= (1 << PWMPIN);
 		
 		// Enable pull-up
-		//PORTB |= (1 << EN);
 		PORTB |= (1 << POS);
-		//MCUCR |= (1 << PUD);
 		
 		// Enable PWM
-		TCCR0A |= (1 << COM0A1)  | (1 << WGM01) | (1 << WGM00);  // Fast PWM
-		TCCR0B |= (0 << WGM02);									 // Fast PWM
+		TCCR0A |= (1 << COM0A1)  | (1 << WGM01) | (1 << WGM00); 
+		TCCR0B |= (0 << WGM02);									
 		
 		
 		// Set prescaler
@@ -54,7 +51,6 @@ int main(void)
 		}
 		else
 		{
-			//OCR0A = 0;
 			DDRB &= ~(1 << PWMPIN);
 	    }
 	}
